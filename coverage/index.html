@@ -1,0 +1,3878 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <title>Code coverage for Byzantion chess</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script src='./assets/0.7.1/application.js' type='text/javascript'></script>    
+    <link href='./assets/0.7.1/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" type="image/png" href="./assets/0.7.1/favicon_green.png" />
+    <link rel="icon" type="image/png" href="./assets/0.7.1/favicon.png" />
+  </head>
+  
+  <body>
+    <div id="loading">
+      <img src="./assets/0.7.1/loading.gif" alt="loading"/>
+    </div>
+    <div id="wrapper" style="display:none;">
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-06-15T21:34:57+02:00">2013-06-15T21:34:57+02:00</abbr></div>
+      <ul class="group_tabs"></ul>
+
+      <div id="content">
+        <div class="file_list_container" id="AllFiles">
+  <h2>
+    <span class="group_name">All Files</span>
+    (<span class="covered_percent"><span class="green">91.62%</span></span>
+     covered at
+     <span class="covered_strength">
+       <span class="green">
+         53.15
+       </span>
+    </span> hits/line)
+  </h2>
+  <a name="AllFiles"></a>
+  <div>
+    <b>14</b> files in total.
+    <b>334</b> relevant lines. 
+    <span class="green"><b>306</b> lines covered</span> and
+    <span class="red"><b>28</b> lines missed </span>
+  </div>
+  <table class="file_list">
+    <thead>
+      <tr>
+        <th>File</th>
+        <th>% covered</th>
+        <th>Lines</th>
+        <th>Relevant Lines</th>
+        <th>Lines covered</th>
+        <th>Lines missed</th>
+        <th>Avg. Hits / Line</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="strong"><a href="#09b1bbf63d485f05e5fa7b071441ca053c91c254" class="src_link" title="lib/byzantion_chess.rb">lib/byzantion_chess.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>28</td>
+        <td>26</td>
+        <td>26</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#5aac11b691866cd42443495c8f059fab844787a3" class="src_link" title="lib/byzantion_chess/bishop.rb">lib/byzantion_chess/bishop.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>5</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>7.7</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#a0ad8398f1bca9a1e3c4c1ad0971e6495cce6be0" class="src_link" title="lib/byzantion_chess/board.rb">lib/byzantion_chess/board.rb</a></td>
+        <td class="green strong">92.68 %</td>
+        <td>211</td>
+        <td>123</td>
+        <td>114</td>
+        <td>9</td>
+        <td>307.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#bd4b5b81c07ffe9dbf66330b7f626fcf65d28917" class="src_link" title="lib/byzantion_chess/castle.rb">lib/byzantion_chess/castle.rb</a></td>
+        <td class="red strong">77.08 %</td>
+        <td>88</td>
+        <td>48</td>
+        <td>37</td>
+        <td>11</td>
+        <td>3.9</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#d1d57927a53fac7436495e0b401f36806b7954be" class="src_link" title="lib/byzantion_chess/chess_exceptions.rb">lib/byzantion_chess/chess_exceptions.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>10</td>
+        <td>9</td>
+        <td>9</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#5dfe30d5b9dfb803ca4c46accb5b8de04d314597" class="src_link" title="lib/byzantion_chess/en_passant.rb">lib/byzantion_chess/en_passant.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>19</td>
+        <td>11</td>
+        <td>11</td>
+        <td>0</td>
+        <td>4.3</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#3519c43875a30ea611c829a57347bf530a6a9d4a" class="src_link" title="lib/byzantion_chess/field.rb">lib/byzantion_chess/field.rb</a></td>
+        <td class="green strong">93.48 %</td>
+        <td>85</td>
+        <td>46</td>
+        <td>43</td>
+        <td>3</td>
+        <td>33.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#3bc424016218fd194ce07f2f1f2aeecdb1f368fa" class="src_link" title="lib/byzantion_chess/king.rb">lib/byzantion_chess/king.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>6</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#77e23c3da6ef6b622c8309f788a85414e0f70ed0" class="src_link" title="lib/byzantion_chess/knight.rb">lib/byzantion_chess/knight.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>5</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>8.3</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#685b9f37c2de2218d4e81a9ce1d0c78f710249d3" class="src_link" title="lib/byzantion_chess/move.rb">lib/byzantion_chess/move.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>21</td>
+        <td>14</td>
+        <td>14</td>
+        <td>0</td>
+        <td>9.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#78519f7b3cbfbd525f66bb4eca4204abe25bbb92" class="src_link" title="lib/byzantion_chess/pawn.rb">lib/byzantion_chess/pawn.rb</a></td>
+        <td class="green strong">90.91 %</td>
+        <td>21</td>
+        <td>11</td>
+        <td>10</td>
+        <td>1</td>
+        <td>42.3</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#1461c4b34c1289bfeda7c2f894d95094c452ff56" class="src_link" title="lib/byzantion_chess/piece.rb">lib/byzantion_chess/piece.rb</a></td>
+        <td class="yellow strong">87.88 %</td>
+        <td>60</td>
+        <td>33</td>
+        <td>29</td>
+        <td>4</td>
+        <td>319.9</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#1b2e40cbbb05a5a44f800c2a5406cf3724f00bc1" class="src_link" title="lib/byzantion_chess/queen.rb">lib/byzantion_chess/queen.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>5</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#ecf980f4ddf5de03805264cb5cddd4f7bca3c9ee" class="src_link" title="lib/byzantion_chess/rook.rb">lib/byzantion_chess/rook.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>5</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>4.7</td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+
+        
+      </div>
+    
+      <div id="footer">
+        Generated by <a href="http://github.com/colszowka/simplecov">simplecov</a> v0.7.1 
+        and simplecov-html v0.7.1<br/>
+        using RSpec
+      </div>
+    
+      <div class="source_files">
+      
+        <div class="source_table" id="09b1bbf63d485f05e5fa7b071441ca053c91c254">
+  <div class="header">
+    <h3>lib/byzantion_chess.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>26</b> relevant lines. 
+      <span class="green"><b>26</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require 'byzantion_chess/version'</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require 'byzantion_chess/board'</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require 'byzantion_chess/piece'</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require 'byzantion_chess/king'</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require 'byzantion_chess/queen'</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require 'byzantion_chess/rook'</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require 'byzantion_chess/bishop'</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require 'byzantion_chess/knight'</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require 'byzantion_chess/pawn'</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require 'byzantion_chess/move'</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require 'byzantion_chess/field'</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require 'byzantion_chess/castle'</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require 'byzantion_chess/en_passant'</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require 'byzantion_chess/chess_exceptions'</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module ByzantionChess</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    START_POSITION = &quot;rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    WHITE = &quot;white&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    BLACK = &quot;black&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    A = 0</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    B = 1</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    C = 2</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    D = 3</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    E = 4</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    F = 5</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    G = 6</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    H = 7</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="5aac11b691866cd42443495c8f059fab844787a3">
+  <div class="header">
+    <h3>lib/byzantion_chess/bishop.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class ByzantionChess::Bishop &lt; ByzantionChess::Piece</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def can_move_to_field? destination</code>
+        </li>
+      
+        <li class="covered" data-hits="21" data-linenumber="3">
+          <span class="hits">21</span>
+          
+          <code class="ruby">    @field.accessible_by_diagonal(destination)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="a0ad8398f1bca9a1e3c4c1ad0971e6495cce6be0">
+  <div class="header">
+    <h3>lib/byzantion_chess/board.rb</h3>
+    <h4><span class="green">92.68 %</span> covered</h4>
+    <div>
+      <b>123</b> relevant lines. 
+      <span class="green"><b>114</b> lines covered</span> and
+      <span class="red"><b>9</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module ByzantionChess</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class Board</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    attr_reader :pieces, :moves</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    attr_accessor :to_move</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def initialize(fen = &quot;&quot;, to_move = WHITE)</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="7">
+          <span class="hits">6</span>
+          
+          <code class="ruby">      @pieces = []</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="8">
+          <span class="hits">6</span>
+          
+          <code class="ruby">      fen.blank? ? readFEN(START_POSITION) : readFEN(fen)</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="9">
+          <span class="hits">6</span>
+          
+          <code class="ruby">      @to_move = to_move</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="10">
+          <span class="hits">6</span>
+          
+          <code class="ruby">      @moves = []</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="11">
+          <span class="hits">6</span>
+          
+          <code class="ruby">      raise &quot;Unsuccessfull Board initialisation - invalid_position&quot; unless self.valid_position?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def select_piece(klass,color)</code>
+        </li>
+      
+        <li class="covered" data-hits="1062" data-linenumber="15">
+          <span class="hits">1062</span>
+          
+          <code class="ruby">      @pieces.select{|piece| piece.class == klass &amp;&amp; piece.get_color == color}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def piece_from(field_string)</code>
+        </li>
+      
+        <li class="covered" data-hits="32" data-linenumber="19">
+          <span class="hits">32</span>
+          
+          <code class="ruby">      field_taken(ByzantionChess::Field.to_field(field_string))</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def valid_position?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">      return false if select_piece(ByzantionChess::King, WHITE).size != 1 &amp;&amp;</code>
+        </li>
+      
+        <li class="covered" data-hits="20" data-linenumber="24">
+          <span class="hits">20</span>
+          
+          <code class="ruby">      select_piece(ByzantionChess::King, BLACK) != 1</code>
+        </li>
+      
+        <li class="covered" data-hits="9393" data-linenumber="25">
+          <span class="hits">9393</span>
+          
+          <code class="ruby">      @pieces.each_pair{|a,b| return false if a.same_location_as?(b)}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">      #!self.is_check?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def add_piece(piece)</code>
+        </li>
+      
+        <li class="covered" data-hits="216" data-linenumber="30">
+          <span class="hits">216</span>
+          
+          <code class="ruby">      return false unless piece</code>
+        </li>
+      
+        <li class="covered" data-hits="192" data-linenumber="31">
+          <span class="hits">192</span>
+          
+          <code class="ruby">      if self.field_taken(piece.field)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="32">
+          
+          
+          <code class="ruby">        raise BoardSetupException &quot;Duplicate pieces for a field&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="covered" data-hits="192" data-linenumber="34">
+          <span class="hits">192</span>
+          
+          <code class="ruby">        @pieces &lt;&lt; piece</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def field_taken(field)</code>
+        </li>
+      
+        <li class="covered" data-hits="238" data-linenumber="39">
+          <span class="hits">238</span>
+          
+          <code class="ruby">      self.pieces.each do |p|</code>
+        </li>
+      
+        <li class="covered" data-hits="3994" data-linenumber="40">
+          <span class="hits">3994</span>
+          
+          <code class="ruby">        return p if p.horizontal_line == field.horizontal_line &amp;&amp; p.vertical_line == field.vertical_line</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="covered" data-hits="207" data-linenumber="42">
+          <span class="hits">207</span>
+          
+          <code class="ruby">      false</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="45">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def readFEN fen</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby">      # TODO Na razie sa tylko ruchy</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="47">
+          <span class="hits">6</span>
+          
+          <code class="ruby">      board, color_to_move, castles, en_passant, halfmove_clock, move_number = fen.strip.split(&quot; &quot;)     </code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="48">
+          <span class="hits">6</span>
+          
+          <code class="ruby">      board.split(&quot;/&quot;).each_with_index do |line, index|</code>
+        </li>
+      
+        <li class="covered" data-hits="48" data-linenumber="49">
+          <span class="hits">48</span>
+          
+          <code class="ruby">        column = 0</code>
+        </li>
+      
+        <li class="covered" data-hits="48" data-linenumber="50">
+          <span class="hits">48</span>
+          
+          <code class="ruby">        line.each_char do |char|</code>
+        </li>
+      
+        <li class="covered" data-hits="216" data-linenumber="51">
+          <span class="hits">216</span>
+          
+          <code class="ruby">          column +=1         </code>
+        </li>
+      
+        <li class="covered" data-hits="216" data-linenumber="52">
+          <span class="hits">216</span>
+          
+          <code class="ruby">          field = ByzantionChess::Field.new(column-1, 7-index)         </code>
+        </li>
+      
+        <li class="covered" data-hits="216" data-linenumber="53">
+          <span class="hits">216</span>
+          
+          <code class="ruby">          case char</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby">            when '1','2','3','4','5','6','7','8'</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="55">
+          <span class="hits">24</span>
+          
+          <code class="ruby">              column += char.to_i-1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby">            when 'k'</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="57">
+          <span class="hits">6</span>
+          
+          <code class="ruby">              piece = ByzantionChess::King.new(field, BLACK)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
+          
+          
+          <code class="ruby">            when 'q'</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="59">
+          <span class="hits">6</span>
+          
+          <code class="ruby">              piece = ByzantionChess::Queen.new(field, BLACK)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby">            when 'r'</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="61">
+          <span class="hits">12</span>
+          
+          <code class="ruby">              piece = ByzantionChess::Rook.new(field, BLACK)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">            when 'b'</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="63">
+          <span class="hits">12</span>
+          
+          <code class="ruby">              piece = ByzantionChess::Bishop.new(field, BLACK)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="64">
+          
+          
+          <code class="ruby">            when 'n'</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="65">
+          <span class="hits">12</span>
+          
+          <code class="ruby">              piece = ByzantionChess::Knight.new(field, BLACK)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby">            when 'p'</code>
+        </li>
+      
+        <li class="covered" data-hits="48" data-linenumber="67">
+          <span class="hits">48</span>
+          
+          <code class="ruby">              piece = ByzantionChess::Pawn.new(field, BLACK)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby">            when 'K'</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="69">
+          <span class="hits">6</span>
+          
+          <code class="ruby">              piece = ByzantionChess::King.new(field, WHITE)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">            when 'Q'</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="71">
+          <span class="hits">6</span>
+          
+          <code class="ruby">              piece = ByzantionChess::Queen.new(field, WHITE)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby">            when 'R'</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="73">
+          <span class="hits">12</span>
+          
+          <code class="ruby">              piece = ByzantionChess::Rook.new(field, WHITE)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby">            when 'B'</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="75">
+          <span class="hits">12</span>
+          
+          <code class="ruby">              piece = ByzantionChess::Bishop.new(field, WHITE)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
+          <code class="ruby">            when 'N'</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="77">
+          <span class="hits">12</span>
+          
+          <code class="ruby">              piece = ByzantionChess::Knight.new(field, WHITE)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="78">
+          
+          
+          <code class="ruby">            when 'P'</code>
+        </li>
+      
+        <li class="covered" data-hits="48" data-linenumber="79">
+          <span class="hits">48</span>
+          
+          <code class="ruby">              piece = ByzantionChess::Pawn.new(field, WHITE)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="80">
+          
+          
+          <code class="ruby">          end</code>
+        </li>
+      
+        <li class="covered" data-hits="216" data-linenumber="81">
+          <span class="hits">216</span>
+          
+          <code class="ruby">          self.add_piece(piece)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="82">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="83">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="86">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def writeFEN</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="87">
+          
+          
+          <code class="ruby">      return &quot;fen&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="88">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="89">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="90">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def get_possible_pieces(move)</code>
+        </li>
+      
+        <li class="covered" data-hits="481" data-linenumber="91">
+          <span class="hits">481</span>
+          
+          <code class="ruby">      av_pieces = @pieces.select{|piece| piece.kind_of?(move.piece.class) &amp;&amp; piece.color == move.piece.color}</code>
+        </li>
+      
+        <li class="covered" data-hits="76" data-linenumber="92">
+          <span class="hits">76</span>
+          
+          <code class="ruby">      .select{|piece| piece.can_move_to_field?(move.finish) || (piece.can_take_on_field?(move.finish) &amp;&amp; field_taken(move.finish))}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="93">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="94">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="95">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def make_move move</code>
+        </li>
+      
+        <li class="covered" data-hits="17" data-linenumber="96">
+          <span class="hits">17</span>
+          
+          <code class="ruby">      raise WrongMoveException(&quot;Wrong move class&quot;) unless move.kind_of? ByzantionChess::Move</code>
+        </li>
+      
+        <li class="covered" data-hits="17" data-linenumber="97">
+          <span class="hits">17</span>
+          
+          <code class="ruby">      destination = move.finish</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="98">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="17" data-linenumber="99">
+          <span class="hits">17</span>
+          
+          <code class="ruby">      if move.piece.kind_of?(ByzantionChess::King) &amp;&amp; (move.piece.vertical_line-destination.vertical_line).abs &gt; 1</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="100">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        ByzantionChess::Castle.new(self,move).castle</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="101">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        return true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="102">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="103">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="30" data-linenumber="104">
+          <span class="hits">30</span>
+          
+          <code class="ruby">      possible_pieces = get_possible_pieces(move).keep_if{|piece| path_is_not_obstructed?(piece, destination) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="105">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="15" data-linenumber="106">
+          <span class="hits">15</span>
+          
+          <code class="ruby">      if move.piece.kind_of?(ByzantionChess::Pawn) &amp;&amp; @moves.present? &amp;&amp; </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="107">
+          
+          
+          <code class="ruby">        @moves.last.piece.kind_of?(ByzantionChess::Pawn) &amp;&amp; @moves.last.en_passant</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="108">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="109">
+          <span class="hits">3</span>
+          
+          <code class="ruby">        en_pawns = ByzantionChess::EnPassant.new(self, move).get_pawns</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="110">
+          <span class="hits">3</span>
+          
+          <code class="ruby">        if en_pawns.present?</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="111">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          possible_pieces.concat en_pawns</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="112">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          @en_passant_possible = true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="113">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="114">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="115">
+          <span class="hits">12</span>
+          
+          <code class="ruby">        @en_passant_possible = false</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="116">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="117">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="15" data-linenumber="118">
+          <span class="hits">15</span>
+          
+          <code class="ruby">      raise InvalidMoveException(&quot;No piece to make that move: #{move.inspect}&quot;) if possible_pieces.blank?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="119">
+          
+          
+          <code class="ruby">      </code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="120">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      if possible_pieces.size == 2</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="121">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        if move.additional_info.ord &gt;= 97</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="122">
+          <span class="hits">3</span>
+          
+          <code class="ruby">          possible_pieces.keep_if{|piece| piece.vertical_line == move.additional_info.ord - 97}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="123">
+          
+          
+          <code class="ruby">        else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="124">
+          
+          
+          <code class="ruby">          possible_pieces.keep_if{|piece| piece.horizontal_line == move.additional_info.ord-1}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="125">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="126">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="127">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="128">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      raise &quot;No piece to make that move: #{move.inspect}&quot; if possible_pieces.size != 1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="129">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="130">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      destroy_piece_on_field(destination)  #Destroy piece that is taken</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="131">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      destroy_pawn_by_en_passant move  #Destroy pawn by en_passant</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="132">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      piece = possible_pieces.first</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="133">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      move.en_passant = true if move.piece.kind_of?(ByzantionChess::Pawn) &amp;&amp; (piece.field.horizontal_line - destination.horizontal_line).abs == 2   #set if move is able to procees en_passant</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="134">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      piece.update_position destination  #Update piece position</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="135">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      if move.promotion_to  #Update piece if promotion</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="136">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        new_piece = piece.promote(move.promotion_to)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="137">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        @pieces.delete(piece)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="138">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        @pieces &lt;&lt; new_piece</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="139">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="140">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      piece.moved = true  #Set that this piece has moved</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="141">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      @to_move = update_to_move</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="142">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      raise &quot;Invalid position&quot; unless self.valid_position?</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="143">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      @moves &lt;&lt; move</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="144">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="145">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="146">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="147">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def king_checked?</code>
+        </li>
+      
+        <li class="covered" data-hits="62" data-linenumber="148">
+          <span class="hits">62</span>
+          
+          <code class="ruby">      pieces = @pieces.select{|piece| piece.color != @to_move}</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="149">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      king = select_piece(ByzantionChess::King, @to_move).first</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="150">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      pieces.each do |piece|</code>
+        </li>
+      
+        <li class="covered" data-hits="31" data-linenumber="151">
+          <span class="hits">31</span>
+          
+          <code class="ruby">        return true if piece.can_take_on_field?(king.field)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="152">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="153">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      false</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="154">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="155">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="156">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def path_is_not_obstructed?(piece, destination)</code>
+        </li>
+      
+        <li class="covered" data-hits="18" data-linenumber="157">
+          <span class="hits">18</span>
+          
+          <code class="ruby">      return true if piece.class == ByzantionChess::Knight</code>
+        </li>
+      
+        <li class="covered" data-hits="13" data-linenumber="158">
+          <span class="hits">13</span>
+          
+          <code class="ruby">      fields = Field.get_fields_between(piece.field, destination)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="159">
+          
+          
+          <code class="ruby">      </code>
+        </li>
+      
+        <li class="covered" data-hits="13" data-linenumber="160">
+          <span class="hits">13</span>
+          
+          <code class="ruby">      fields.each do |field|</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="161">
+          <span class="hits">8</span>
+          
+          <code class="ruby">        return false if field_taken(field)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="162">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="covered" data-hits="11" data-linenumber="163">
+          <span class="hits">11</span>
+          
+          <code class="ruby">      return true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="164">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="165">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="166">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def validate_game game_id</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="167">
+          
+          
+          <code class="ruby">      @moves = Move.find_all_by_body_id(game_id)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="168">
+          
+          
+          <code class="ruby">      return false if @moves.empty?</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="169">
+          
+          
+          <code class="ruby">      @moves.each do |move|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="170">
+          
+          
+          <code class="ruby">        return false unless self.make_move(move)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="171">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="172">
+          
+          
+          <code class="ruby">      @pieces = generate_start_position</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="173">
+          
+          
+          <code class="ruby">      true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="174">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="175">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="176">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def update_to_move</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="177">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      if @to_move == WHITE</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="178">
+          <span class="hits">9</span>
+          
+          <code class="ruby">        return BLACK</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="179">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="180">
+          <span class="hits">7</span>
+          
+          <code class="ruby">        return WHITE</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="181">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="182">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="183">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="184">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def destroy_piece_on_field field</code>
+        </li>
+      
+        <li class="covered" data-hits="480" data-linenumber="185">
+          <span class="hits">480</span>
+          
+          <code class="ruby">      @pieces.delete_if{|piece| piece.vertical_line == field.vertical_line &amp;&amp; piece.horizontal_line == field.horizontal_line}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="186">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="187">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="188">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def destroy_pawn_by_en_passant move</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="189">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      return nil if !@en_passant_possible || piece_from(move.finish.to_s).present? || !move.finish.accessible_by_diagonal(move.piece.field)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="190">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      field = move.piece.color == ByzantionChess::WHITE ? Field.to_field(move.finish.neighbour_field(0, -1).to_s) : Field.to_field(move.finish.neighbour_field(0, 1).to_s)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="191">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      destroy_piece_on_field field</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="192">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="193">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="194">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="195">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="196">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Array</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="197">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def each_pair_index</code>
+        </li>
+      
+        <li class="covered" data-hits="20" data-linenumber="198">
+          <span class="hits">20</span>
+          
+          <code class="ruby">        (0..(self.length-1)).each do |i|</code>
+        </li>
+      
+        <li class="covered" data-hits="622" data-linenumber="199">
+          <span class="hits">622</span>
+          
+          <code class="ruby">            ((i+1)..(self.length-1 )).each do |j|</code>
+        </li>
+      
+        <li class="covered" data-hits="9373" data-linenumber="200">
+          <span class="hits">9373</span>
+          
+          <code class="ruby">                yield i, j</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="201">
+          
+          
+          <code class="ruby">            end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="202">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="203">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="204">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="205">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def each_pair</code>
+        </li>
+      
+        <li class="covered" data-hits="20" data-linenumber="206">
+          <span class="hits">20</span>
+          
+          <code class="ruby">        self.each_pair_index do |i, j|</code>
+        </li>
+      
+        <li class="covered" data-hits="9373" data-linenumber="207">
+          <span class="hits">9373</span>
+          
+          <code class="ruby">            yield self[i], self[j]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="208">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="209">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="210">
+          
+          
+          <code class="ruby">end </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="211">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="bd4b5b81c07ffe9dbf66330b7f626fcf65d28917">
+  <div class="header">
+    <h3>lib/byzantion_chess/castle.rb</h3>
+    <h4><span class="red">77.08 %</span> covered</h4>
+    <div>
+      <b>48</b> relevant lines. 
+      <span class="green"><b>37</b> lines covered</span> and
+      <span class="red"><b>11</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module ByzantionChess</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class Castle</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attr_accessor :board</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def initialize(board, move)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="7">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      @board = board</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      @move = move</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def castle</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="12">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      raise ImpossibleCastleException unless castle_posible?(@move)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="13">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      rook = select_rook(@move)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby"> </code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="15">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      if @move.piece.vertical_line-@move.finish.vertical_line &lt; 0</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="16">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        if @board.to_move == ByzantionChess::WHITE</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          rook.update_position(Field.to_field(&quot;f1&quot;))</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">        else</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          rook.update_position(Field.to_field(&quot;f8&quot;))</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="22">
+          
+          
+          <code class="ruby">        if @board.to_move == ByzantionChess::WHITE</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="23">
+          
+          
+          <code class="ruby">          rook.update_position(Field.to_field(&quot;d1&quot;))</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">        else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="25">
+          
+          
+          <code class="ruby">          rook.update_position(Field.to_field(&quot;d8&quot;))</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="29">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      rook.moved = true</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="30">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      @move.piece.update_position(@move.finish)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="31">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      @move.piece.moved = true</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="32">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      @board.to_move = @board.update_to_move</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def select_rook(move)</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="36">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      if move.piece.vertical_line-move.finish.vertical_line &lt; 0</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="37">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        if @board.to_move == ByzantionChess::WHITE</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="38">
+          <span class="hits">2</span>
+          
+          <code class="ruby">          rook = @board.piece_from(&quot;h1&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">        else</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="40">
+          <span class="hits">2</span>
+          
+          <code class="ruby">          rook = @board.piece_from(&quot;h8&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="43">
+          
+          
+          <code class="ruby">        if @board.to_move == ByzantionChess::WHITE</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="44">
+          
+          
+          <code class="ruby">          rook = @board.piece_from(&quot;a1&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby">        else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="46">
+          
+          
+          <code class="ruby">          rook = @board.piece_from(&quot;a8&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="50">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="51">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def rook_moved?(move)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="52">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      select_rook(move).moved?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="53">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def path_checked?(move)</code>
+        </li>
+      
+        <li class="covered" data-hits="62" data-linenumber="56">
+          <span class="hits">62</span>
+          
+          <code class="ruby">      pieces = @board.pieces.select{|piece| piece.color != @board.to_move}</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="57">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      king = @board.select_piece(ByzantionChess::King, @board.to_move).first</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
+          
+          
+          <code class="ruby">      </code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="59">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      if move.piece.vertical_line-move.finish.vertical_line &lt; 0</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="60">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        if @board.to_move == ByzantionChess::WHITE</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="61">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          fields = Field.get_fields_between(king.field, Field.to_field(&quot;h1&quot;))</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">        else</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="63">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          fields = Field.get_fields_between(king.field, Field.to_field(&quot;h8&quot;))</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="64">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="65">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="66">
+          
+          
+          <code class="ruby">        if @board.to_move == ByzantionChess::WHITE</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="67">
+          
+          
+          <code class="ruby">          fields = Field.get_fields_between(king.field, Field.to_field(&quot;a1&quot;))</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="68">
+          
+          
+          <code class="ruby">          fields.keep_if{|field| field.to_s != &quot;b1&quot;}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">        else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="70">
+          
+          
+          <code class="ruby">          fields = Field.get_fields_between(king.field, Field.to_field(&quot;a8&quot;))</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="71">
+          
+          
+          <code class="ruby">          fields.keep_if{|field| field.to_s != &quot;b8&quot;}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="73">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="74">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      fields.each do |field|</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="75">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        pieces.each do |piece|</code>
+        </li>
+      
+        <li class="covered" data-hits="62" data-linenumber="76">
+          <span class="hits">62</span>
+          
+          <code class="ruby">          return true if piece.can_take_on_field?(field) &amp;&amp; board.path_is_not_obstructed?(piece,field)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="77">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="78">
+          
+          
+          <code class="ruby">      end </code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="79">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      false</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="80">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="81">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="82">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def castle_posible?(move)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="83">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      @board.path_is_not_obstructed?(move.piece, move.finish) &amp;&amp; !move.piece.moved &amp;&amp;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby">      !rook_moved?(move) &amp;&amp; !@board.king_checked? &amp;&amp; !path_checked?(move)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="86">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="88">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="d1d57927a53fac7436495e0b401f36806b7954be">
+  <div class="header">
+    <h3>lib/byzantion_chess/chess_exceptions.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>9</b> relevant lines. 
+      <span class="green"><b>9</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module ByzantionChess</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class WrongFieldException &lt; Exception; end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class WrongMoveException &lt; Exception; end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class InvalidMoveException &lt; Exception; end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class InvalidPawnPositionException &lt; Exception; end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class InvalidPieceException &lt; Exception; end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class InvalidCastlingException &lt; Exception; end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class BoardSetupException &lt; Exception; end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class ImpossibleCastleException &lt; Exception; end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="5dfe30d5b9dfb803ca4c46accb5b8de04d314597">
+  <div class="header">
+    <h3>lib/byzantion_chess/en_passant.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>11</b> relevant lines. 
+      <span class="green"><b>11</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module ByzantionChess</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class EnPassant</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    attr_reader :board, :move</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def initialize(board,move)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="7">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      @board = board</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="8">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      @move = move</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def get_pawns</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="12">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      all_pawns = board.select_piece(ByzantionChess::Pawn, @board.to_move)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="13">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      last_move = @board.moves.last</code>
+        </li>
+      
+        <li class="covered" data-hits="27" data-linenumber="14">
+          <span class="hits">27</span>
+          
+          <code class="ruby">      all_pawns.keep_if{|pawn| pawn.horizontal_line == last_move.finish.horizontal_line &amp;&amp; (pawn.vertical_line-last_move.finish.horizontal_line).abs == 1}</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="15">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      all_pawns </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="3519c43875a30ea611c829a57347bf530a6a9d4a">
+  <div class="header">
+    <h3>lib/byzantion_chess/field.rb</h3>
+    <h4><span class="green">93.48 %</span> covered</h4>
+    <div>
+      <b>46</b> relevant lines. 
+      <span class="green"><b>43</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module ByzantionChess</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class Field</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    attr_reader :vertical_line, :horizontal_line</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def initialize(vertical_line, horizontal_line)</code>
+        </li>
+      
+        <li class="covered" data-hits="288" data-linenumber="7">
+          <span class="hits">288</span>
+          
+          <code class="ruby">      raise WrongFieldException unless (0..7).include?(vertical_line) &amp;&amp; (0..7).include?(horizontal_line)</code>
+        </li>
+      
+        <li class="covered" data-hits="288" data-linenumber="8">
+          <span class="hits">288</span>
+          
+          <code class="ruby">      @vertical_line = vertical_line</code>
+        </li>
+      
+        <li class="covered" data-hits="288" data-linenumber="9">
+          <span class="hits">288</span>
+          
+          <code class="ruby">      @horizontal_line = horizontal_line</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def to_s</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="13">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      (@vertical_line+97).chr + (@horizontal_line+1).to_s</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def self.to_field(square)</code>
+        </li>
+      
+        <li class="covered" data-hits="54" data-linenumber="17">
+          <span class="hits">54</span>
+          
+          <code class="ruby">      square.present? ? Field.new(square[0].ord-97, square[1].to_i-1) : nil</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def self.get_fields_between(origin, destination)</code>
+        </li>
+      
+        <li class="covered" data-hits="15" data-linenumber="21">
+          <span class="hits">15</span>
+          
+          <code class="ruby">      return WrongMoveException unless origin.kind_of?(Field) &amp;&amp; destination.kind_of?(Field)</code>
+        </li>
+      
+        <li class="covered" data-hits="15" data-linenumber="22">
+          <span class="hits">15</span>
+          
+          <code class="ruby">      fields = []</code>
+        </li>
+      
+        <li class="covered" data-hits="15" data-linenumber="23">
+          <span class="hits">15</span>
+          
+          <code class="ruby">      if destination.accessible_by_vertical_line(origin)</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="24">
+          <span class="hits">5</span>
+          
+          <code class="ruby">        range_helper(destination.horizontal_line..origin.horizontal_line).each do |hor|</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="25">
+          <span class="hits">9</span>
+          
+          <code class="ruby">          fields &lt;&lt; Field.new(origin.vertical_line, hor)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">      elsif destination.accessible_by_horizontal_line(origin)</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="28">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        range_helper(destination.vertical_line..origin.vertical_line).each do |ver|</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="29">
+          <span class="hits">6</span>
+          
+          <code class="ruby">          fields &lt;&lt; Field.new(ver, origin.horizontal_line)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">      elsif destination.accessible_by_diagonal(origin)</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="32">
+          <span class="hits">6</span>
+          
+          <code class="ruby">        (((destination.horizontal_line-origin.horizontal_line).abs)-1).times do |i|</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="33">
+          <span class="hits">2</span>
+          
+          <code class="ruby">          i = i+1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">          if destination.vertical_line &gt; origin.vertical_line &amp;&amp;</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="35">
+          <span class="hits">2</span>
+          
+          <code class="ruby">            destination.horizontal_line &gt; origin.horizontal_line</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="36">
+          
+          
+          <code class="ruby">            fields &lt;&lt; Field.new(origin.vertical_line+i, origin.horizontal_line+i)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">          elsif destination.vertical_line &gt; origin.vertical_line &amp;&amp;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">            destination.horizontal_line &lt; origin.horizontal_line</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="39">
+          
+          
+          <code class="ruby">            fields &lt;&lt; Field.new(origin.vertical_line+i, origin.horizontal_line-i)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">          elsif destination.vertical_line &lt; origin.vertical_line &amp;&amp;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">            destination.horizontal_line &gt; origin.horizontal_line</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="42">
+          <span class="hits">2</span>
+          
+          <code class="ruby">            fields &lt;&lt; Field.new(origin.vertical_line-i, origin.horizontal_line+i)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">          else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="44">
+          
+          
+          <code class="ruby">            fields &lt;&lt; Field.new(origin.vertical_line-i, origin.horizontal_line-i)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby">          end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="covered" data-hits="15" data-linenumber="48">
+          <span class="hits">15</span>
+          
+          <code class="ruby">      fields</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="50">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="51">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def accessible_by_vertical_line(field, limit=8)</code>
+        </li>
+      
+        <li class="covered" data-hits="77" data-linenumber="52">
+          <span class="hits">77</span>
+          
+          <code class="ruby">      @vertical_line == field.vertical_line &amp;&amp; ((@horizontal_line-field.horizontal_line).abs &lt;= limit)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="53">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def accessible_by_horizontal_line(field, limit=8)</code>
+        </li>
+      
+        <li class="covered" data-hits="10" data-linenumber="56">
+          <span class="hits">10</span>
+          
+          <code class="ruby">      @horizontal_line == field.horizontal_line &amp;&amp; ((@vertical_line-field.vertical_line).abs &lt;= limit)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="59">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def accessible_by_line(field)</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="60">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      vertical_line == field.vertical_line || @horizontal_line == field.horizontal_line</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="63">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def accessible_by_diagonal(field, limit=8)</code>
+        </li>
+      
+        <li class="covered" data-hits="131" data-linenumber="64">
+          <span class="hits">131</span>
+          
+          <code class="ruby">      (@vertical_line-field.vertical_line).abs == (@horizontal_line-field.horizontal_line).abs &amp;&amp;</code>
+        </li>
+      
+        <li class="covered" data-hits="160" data-linenumber="65">
+          <span class="hits">160</span>
+          
+          <code class="ruby">      (@vertical_line-field.vertical_line).abs &lt;= limit</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="68">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def accessible_by_jump(field)</code>
+        </li>
+      
+        <li class="covered" data-hits="23" data-linenumber="69">
+          <span class="hits">23</span>
+          
+          <code class="ruby">      (1..2).include?((@vertical_line-field.vertical_line).abs) &amp;&amp;</code>
+        </li>
+      
+        <li class="covered" data-hits="34" data-linenumber="70">
+          <span class="hits">34</span>
+          
+          <code class="ruby">      (1..2).include?((@horizontal_line-field.horizontal_line).abs) &amp;&amp;</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="71">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      (@vertical_line-field.vertical_line).abs + (@horizontal_line-field.horizontal_line).abs == 3</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="73">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="74">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def neighbour_field(column, line)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="75">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      Field.new(self.vertical_line+column, self.horizontal_line+line)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="77">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="78">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="79">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="80">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def self.range_helper range</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="81">
+          <span class="hits">9</span>
+          
+          <code class="ruby">      borders = [range.begin, range.end]</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="82">
+          <span class="hits">9</span>
+          
+          <code class="ruby">     (borders.min+1..borders.max-1)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="83">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="3bc424016218fd194ce07f2f1f2aeecdb1f368fa">
+  <div class="header">
+    <h3>lib/byzantion_chess/king.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class ByzantionChess::King &lt; ByzantionChess::Piece</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def can_move_to_field? field</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby">    #return false if field[0] == @column &amp;&amp; field[1] == @line</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">    #(field[0].succ == @column || field[0] == @column.succ || field[0] == @column ) &amp;&amp; (field[1].succ == @line || field[1] == @line.succ || field[1] == @line)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="77e23c3da6ef6b622c8309f788a85414e0f70ed0">
+  <div class="header">
+    <h3>lib/byzantion_chess/knight.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class ByzantionChess::Knight &lt; ByzantionChess::Piece</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def can_move_to_field? destination</code>
+        </li>
+      
+        <li class="covered" data-hits="23" data-linenumber="3">
+          <span class="hits">23</span>
+          
+          <code class="ruby">    @field.accessible_by_jump(destination)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="685b9f37c2de2218d4e81a9ce1d0c78f710249d3">
+  <div class="header">
+    <h3>lib/byzantion_chess/move.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>14</b> relevant lines. 
+      <span class="green"><b>14</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module ByzantionChess</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class Move</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    attr_reader  :finish, :piece, :color, :number, :additional_info, :promotion_to</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    attr_accessor :en_passant</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def initialize(piece, finish_field, number=nil, additional_info = nil)</code>
+        </li>
+      
+        <li class="covered" data-hits="17" data-linenumber="7">
+          <span class="hits">17</span>
+          
+          <code class="ruby">      raise InvalidMoveException unless piece.kind_of? ByzantionChess::Piece</code>
+        </li>
+      
+        <li class="covered" data-hits="17" data-linenumber="8">
+          <span class="hits">17</span>
+          
+          <code class="ruby">      @piece = piece</code>
+        </li>
+      
+        <li class="covered" data-hits="17" data-linenumber="9">
+          <span class="hits">17</span>
+          
+          <code class="ruby">      @finish = Field.to_field(finish_field)</code>
+        </li>
+      
+        <li class="covered" data-hits="17" data-linenumber="10">
+          <span class="hits">17</span>
+          
+          <code class="ruby">      @number = number</code>
+        </li>
+      
+        <li class="covered" data-hits="17" data-linenumber="11">
+          <span class="hits">17</span>
+          
+          <code class="ruby">      @additional_info = additional_info</code>
+        </li>
+      
+        <li class="covered" data-hits="17" data-linenumber="12">
+          <span class="hits">17</span>
+          
+          <code class="ruby">      @en_passant = false</code>
+        </li>
+      
+        <li class="covered" data-hits="17" data-linenumber="13">
+          <span class="hits">17</span>
+          
+          <code class="ruby">      @promotion_to = nil</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def set_promoted_to piece</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @promotion_to = piece</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">       </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">  end </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="78519f7b3cbfbd525f66bb4eca4204abe25bbb92">
+  <div class="header">
+    <h3>lib/byzantion_chess/pawn.rb</h3>
+    <h4><span class="green">90.91 %</span> covered</h4>
+    <div>
+      <b>11</b> relevant lines. 
+      <span class="green"><b>10</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class ByzantionChess::Pawn &lt; ByzantionChess::Piece</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def initialize field, color</code>
+        </li>
+      
+        <li class="covered" data-hits="96" data-linenumber="4">
+          <span class="hits">96</span>
+          
+          <code class="ruby">    raise InvalidPawnPositionException if field.horizontal_line == 0 || field.horizontal_line == 7</code>
+        </li>
+      
+        <li class="covered" data-hits="96" data-linenumber="5">
+          <span class="hits">96</span>
+          
+          <code class="ruby">    super field, color</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def can_move_to_field? destination</code>
+        </li>
+      
+        <li class="covered" data-hits="62" data-linenumber="9">
+          <span class="hits">62</span>
+          
+          <code class="ruby">    @moved ? @field.accessible_by_vertical_line(destination, 1) : @field.accessible_by_vertical_line(destination, 2) </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def can_take_on_field? destination</code>
+        </li>
+      
+        <li class="covered" data-hits="103" data-linenumber="13">
+          <span class="hits">103</span>
+          
+          <code class="ruby">    direction = @color == ByzantionChess::WHITE ? 1 : -1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">    @field.accessible_by_diagonal(destination,1) &amp;&amp;</code>
+        </li>
+      
+        <li class="covered" data-hits="103" data-linenumber="15">
+          <span class="hits">103</span>
+          
+          <code class="ruby">    @field.horizontal_line == destination.horizontal_line - direction</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def how_many_fields</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="19">
+          
+          
+          <code class="ruby">    (@color == WHITE &amp;&amp; @field.horizontal_line == 1 || @color == BLACK &amp;&amp; @field.horizontal_line == 6) ? 2 : 1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="1461c4b34c1289bfeda7c2f894d95094c452ff56">
+  <div class="header">
+    <h3>lib/byzantion_chess/piece.rb</h3>
+    <h4><span class="yellow">87.88 %</span> covered</h4>
+    <div>
+      <b>33</b> relevant lines. 
+      <span class="green"><b>29</b> lines covered</span> and
+      <span class="red"><b>4</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require 'active_support/core_ext/module/delegation'</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class ByzantionChess::Piece</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attr_reader :field, :color, :board</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attr_accessor :moved</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  delegate :horizontal_line, :to =&gt; :field, :prefix =&gt; false, :allow_nil =&gt; false</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  delegate :vertical_line, :to =&gt; :field, :prefix =&gt; false, :allow_nil =&gt; false</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def initialize(field, color, moved=false, board=nil)</code>
+        </li>
+      
+        <li class="covered" data-hits="193" data-linenumber="11">
+          <span class="hits">193</span>
+          
+          <code class="ruby">    raise ByzantionChess::InvalidPieceException unless field &amp;&amp; color</code>
+        </li>
+      
+        <li class="covered" data-hits="193" data-linenumber="12">
+          <span class="hits">193</span>
+          
+          <code class="ruby">    @field = field</code>
+        </li>
+      
+        <li class="covered" data-hits="193" data-linenumber="13">
+          <span class="hits">193</span>
+          
+          <code class="ruby">    @color = color</code>
+        </li>
+      
+        <li class="covered" data-hits="193" data-linenumber="14">
+          <span class="hits">193</span>
+          
+          <code class="ruby">    @moved = moved</code>
+        </li>
+      
+        <li class="covered" data-hits="193" data-linenumber="15">
+          <span class="hits">193</span>
+          
+          <code class="ruby">    @board = board</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def update_position field</code>
+        </li>
+      
+        <li class="covered" data-hits="18" data-linenumber="19">
+          <span class="hits">18</span>
+          
+          <code class="ruby">    @field = field</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def can_move_to_field? field</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="23">
+          
+          
+          <code class="ruby">    false</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def can_take_on_field?(field)</code>
+        </li>
+      
+        <li class="covered" data-hits="54" data-linenumber="27">
+          <span class="hits">54</span>
+          
+          <code class="ruby">    can_move_to_field?(field)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def can_be_promoted?</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="31">
+          
+          
+          <code class="ruby">    false</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def moved?</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="35">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @moved</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def same_diagonal? field</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="39">
+          
+          
+          <code class="ruby">    (@column.ord - field[0].ord).abs == (@line.ord - field[1].ord).abs</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def get_color</code>
+        </li>
+      
+        <li class="covered" data-hits="127" data-linenumber="43">
+          <span class="hits">127</span>
+          
+          <code class="ruby">    @color</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="46">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def same_location_as?(piece)</code>
+        </li>
+      
+        <li class="covered" data-hits="9373" data-linenumber="47">
+          <span class="hits">9373</span>
+          
+          <code class="ruby">    self.horizontal_line == piece.horizontal_line &amp;&amp; self.vertical_line == piece.vertical_line</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="50">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def promote klass</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="51">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    klass.new(field, color, true, board)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="53">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="55">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def good_field_format field</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="57">
+          
+          
+          <code class="ruby">    field.size == 2 &amp;&amp; field[0] &gt;= &quot;a&quot; &amp;&amp; field[0] &lt;= &quot;h&quot; &amp;&amp; field[1] &gt;= &quot;1&quot; &amp;&amp; field[1] &lt;= &quot;8&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="1b2e40cbbb05a5a44f800c2a5406cf3724f00bc1">
+  <div class="header">
+    <h3>lib/byzantion_chess/queen.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class ByzantionChess::Queen &lt; ByzantionChess::Piece</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def can_move_to_field? field</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby">   #((@column == field[0]) ^ (@line == field[1])) || self.same_diagonal?(field)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="ecf980f4ddf5de03805264cb5cddd4f7bca3c9ee">
+  <div class="header">
+    <h3>lib/byzantion_chess/rook.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class ByzantionChess::Rook &lt; ByzantionChess::Piece</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def can_move_to_field? destination</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="3">
+          <span class="hits">12</span>
+          
+          <code class="ruby">    @field.accessible_by_line destination</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+      </div>
+    </div>
+  </body>
+</html>
