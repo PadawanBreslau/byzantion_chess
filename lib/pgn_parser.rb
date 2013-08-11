@@ -1,0 +1,1 @@
+require 'pgn_parser/pgn_file'

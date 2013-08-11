@@ -1,21 +1,19 @@
 module ByzantionChess
   class Move
-    attr_reader  :finish, :piece, :color, :number, :additional_info, :promotion_to
-    attr_accessor :en_passant
-    
-    def initialize(piece, finish_field, number=nil, additional_info = nil)
-      raise InvalidMoveException unless piece.kind_of? ByzantionChess::Piece
-      @piece = piece
-      @finish = Field.to_field(finish_field)
-      @number = number
-      @additional_info = additional_info
-      @en_passant = false
-      @promotion_to = nil
+    attr_reader  :finish, :start, :additional_info
+
+    delegate :color, :to => :additional_info, :prefix => false
+    delegate :number, :to => :additional_info, :prefix => false
+    #delegate :promotion_to, :to => :additional_info, :prefix => false
+
+    def initialize(start_field, finish_field, color, number=nil)
+      @start = start_field.kind_of?(ByzantionChess::Field) ? start_field : Field.to_field(start_field)
+      @finish = finish_field.kind_of?(ByzantionChess::Field) ? finish_field : Field.to_field(finish_field)
+      @additional_info = AdditionalMoveInfo.new(color, number)
     end
 
-    def set_promoted_to piece
-      @promotion_to = piece
+    def execute(board)
+      board.execute_move(self)
     end
-       
   end 
 end

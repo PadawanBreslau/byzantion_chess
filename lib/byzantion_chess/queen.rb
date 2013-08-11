@@ -1,5 +1,5 @@
 class ByzantionChess::Queen < ByzantionChess::Piece
-  def can_move_to_field? field
-   #((@column == field[0]) ^ (@line == field[1])) || self.same_diagonal?(field)
+  def can_move_to_field?(destination)
+    @field.accessible_by_line?(destination) || @field.accessible_by_diagonal?(destination)
   end
 end

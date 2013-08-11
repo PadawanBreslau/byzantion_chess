@@ -1,5 +1,3 @@
-require 'active_support/core_ext/module/delegation'
-
 class ByzantionChess::Piece
   attr_reader :field, :color, :board
   attr_accessor :moved
@@ -7,7 +5,7 @@ class ByzantionChess::Piece
   delegate :horizontal_line, :to => :field, :prefix => false, :allow_nil => false
   delegate :vertical_line, :to => :field, :prefix => false, :allow_nil => false
   
-  def initialize(field, color, moved=false, board=nil)
+  def initialize(field, color, board=nil, moved=false)
     raise ByzantionChess::InvalidPieceException unless field && color
     @field = field
     @color = color

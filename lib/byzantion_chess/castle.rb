@@ -1,18 +1,32 @@
 module ByzantionChess
-  class Castle
+  class Castle < Move
 
   attr_accessor :board
 
-    def initialize(board, move)
-      @board = board
-      @move = move
+    def initialize(start_field, finish_field, color = nil, number = nil)
+      super(start_field, finish_field, color, number)
+      start_fields = %w(e1 e8)
+      finish_fields = %w(g1 g8 c1 c8)
+
+      unless start_fields.include?(start_field.to_s) && finish_fields.include?(finish_field.to_s) && (start_field[-1] == finish_field[-1])
+        raise InvalidMoveException.new('Castle move with wrong start or finish field')
+      end
+
     end
-    
+
+    def execute(board)
+      board.execute_castle(self)
+    end
+
+
+
+
     def castle
-      raise ImpossibleCastleException unless castle_posible?(@move)
+      debugger unless castle_possible?(@move)
+      raise ImpossibleCastleException unless castle_possible?(@move)
       rook = select_rook(@move)
- 
-      if @move.piece.vertical_line-@move.finish.vertical_line < 0
+
+      if @piece.vertical_line-@move.finish.vertical_line < 0
         if @board.to_move == ByzantionChess::WHITE
           rook.update_position(Field.to_field("f1"))
         else
@@ -27,13 +41,14 @@ module ByzantionChess
       end
 
       rook.moved = true
-      @move.piece.update_position(@move.finish)
-      @move.piece.moved = true
+      @piece.update_position(@move.finish)
+      @piece.moved = true
       @board.to_move = @board.update_to_move
+
     end
 
     def select_rook(move)
-      if move.piece.vertical_line-move.finish.vertical_line < 0
+      if @piece.vertical_line-move.finish.vertical_line < 0
         if @board.to_move == ByzantionChess::WHITE
           rook = @board.piece_from("h1")
         else
@@ -46,6 +61,7 @@ module ByzantionChess
           rook = @board.piece_from("a8")
         end
       end
+      rook
     end
 
     def rook_moved?(move)
@@ -55,8 +71,8 @@ module ByzantionChess
     def path_checked?(move)
       pieces = @board.pieces.select{|piece| piece.color != @board.to_move}
       king = @board.select_piece(ByzantionChess::King, @board.to_move).first
-      
-      if move.piece.vertical_line-move.finish.vertical_line < 0
+
+      if @piece.vertical_line-move.finish.vertical_line < 0
         if @board.to_move == ByzantionChess::WHITE
           fields = Field.get_fields_between(king.field, Field.to_field("h1"))
         else
@@ -75,12 +91,13 @@ module ByzantionChess
         pieces.each do |piece|
           return true if piece.can_take_on_field?(field) && board.path_is_not_obstructed?(piece,field)
         end
-      end 
+      end
       false
     end
 
-    def castle_posible?(move)
-      @board.path_is_not_obstructed?(move.piece, move.finish) && !move.piece.moved &&
+    def castle_possible?(move)
+
+      @board.path_is_not_obstructed?(@piece, move.finish) && !@piece.moved &&
       !rook_moved?(move) && !@board.king_checked? && !path_checked?(move)
     end
 

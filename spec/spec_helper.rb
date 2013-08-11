@@ -8,6 +8,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
 SimpleCov.start
 
 require 'byzantion_chess'
+require 'pgn_parser'
 
 # Require this file using `require "spec_helper"` within each of your specs
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration

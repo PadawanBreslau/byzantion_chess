@@ -1,3 +1,4 @@
+require 'active_support/core_ext/module/delegation'
 require 'byzantion_chess/version'
 require 'byzantion_chess/board'
 require 'byzantion_chess/piece'
@@ -11,18 +12,26 @@ require 'byzantion_chess/move'
 require 'byzantion_chess/field'
 require 'byzantion_chess/castle'
 require 'byzantion_chess/en_passant'
+require 'byzantion_chess/promotion'
 require 'byzantion_chess/chess_exceptions'
+require 'byzantion_chess/additional_move_info'
+require 'byzantion_chess/additional_board_info'
+require 'byzantion_chess/board_helper'
+require 'byzantion_chess/fen_helper'
+require 'byzantion_chess/castle_helper'
+require 'pgn_parser/parser.rb'
+require 'pgn_parser/game.rb'
 
 module ByzantionChess
     START_POSITION = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
     WHITE = "white"
     BLACK = "black"
-    A = 0
-    B = 1
-    C = 2
-    D = 3
-    E = 4
-    F = 5
-    G = 6
-    H = 7
+    A = 1
+    B = 2
+    C = 3
+    D = 4
+    E = 5
+    F = 6
+    G = 7
+    H = 8
 end
