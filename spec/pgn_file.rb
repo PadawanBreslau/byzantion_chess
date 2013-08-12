@@ -44,7 +44,7 @@ describe PgnFile do
       @board = ByzantionChess::Board.new
       game.moves.each do |move|
         board_before_move = @board.dup
-        expect{@board.make_move(move)}.not_to raise_error
+        expect{move.execute(@board)}.not_to raise_error
         board_before_move.should_not eql @board
       end
       #TODO - check position
@@ -64,9 +64,8 @@ describe PgnFile do
       @board = ByzantionChess::Board.new
       game.moves.each do |move|
         board_before_move = @board.dup
-        puts move.inspect
-        #expect{@board.make_move(move)}.not_to raise_error
-        #board_before_move.should_not eql @board
+        expect{move.execute(@board)}.not_to raise_error
+        board_before_move.should_not eql @board
       end
       #TODO - check position
     end
@@ -77,7 +76,7 @@ describe PgnFile do
       expect{pgn_file.load_and_parse_games}.not_to raise_error
       pgn_file.load_and_parse_games.should be_true
       pgn_file.games.should_not be_nil
-      pgn_file.games.size.should eql 1
+      pgn_file.games.size.should eql 211
       game = pgn_file.games.first
       game.should be_kind_of(Game)
       game.convert_body_to_moves.should be_true

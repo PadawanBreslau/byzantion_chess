@@ -11,7 +11,7 @@ module ByzantionChess
 
     def update_rook_position(color, type)
       vertical_line = (type == :long) ? "a" : "h"
-      destination_vertical_line = (type == :long) ? "c" : "f"
+      destination_vertical_line = (type == :long) ? "d" : "f"
       horizontal_line = color == ByzantionChess::WHITE ? "1" : "8"
       piece = @board.piece_from(Field.to_field(vertical_line.concat(horizontal_line)))
       piece.update_position(Field.to_field(destination_vertical_line.concat(horizontal_line)))

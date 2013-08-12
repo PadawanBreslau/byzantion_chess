@@ -21,12 +21,19 @@ class Game
         info = return_move_information(move_text)
         last_move_number = info[:move_number] if info[:move_number]
         pieces = board.get_possible_pieces(info[:piece_type], info[:piece_color], info[:field], info[:additional_info])
+        debugger unless pieces.size == 1
         raise ByzantionChess::InvalidMoveException.new("Too many or too few pieces to make move: #{pieces.size}") unless pieces.size == 1
-        move = ByzantionChess::Move.new(pieces.first, info[:field], last_move_number, info[:additional_info])
-        move.set_promoted_to(info[:promoted_piece]) if info[:promoted_piece]
+        piece = pieces.first
+        if info[:promoted_piece]
+          move = ByzantionChess::Promotion.new(info[:promoted_piece], piece.field, info[:field], piece.color, last_move_number)
+        elsif  piece.kind_of?(ByzantionChess::Pawn) && !board.piece_from(info[:field]) && info[:take]
+          move = ByzantionChess::EnPassant.new(piece.field, info[:field], piece.color, last_move_number)
+        else
+          move = ByzantionChess::Move.new(piece.field, info[:field], piece.color, last_move_number)
+        end
       end
-	    board.make_move(move)
-		  @moves << move
+	    move.execute(board)
+      @moves << move
     end
     return true
 	end
@@ -36,15 +43,14 @@ class Game
   def create_castle(move, board, last_move_number)
     move_text = move.text_value
     info = return_move_information(move_text, true)
-    info[:piece_type] = ByzantionChess::King
-    king = board.king(info[:piece_color])
+    start_field = ByzantionChess::WHITE == info[:piece_color] ? 'e1' : 'e8'
 
     if 2 == move_text.split('-').size
-      info[:field] = ByzantionChess::WHITE == info[:piece_color] ? ByzantionChess::Field.to_field("g1") : ByzantionChess::Field.to_field("g8")
+      destination = ByzantionChess::WHITE == info[:piece_color] ? 'g1' : 'g8'
     else
-      info[:field] = ByzantionChess::WHITE == info[:piece_color] ? ByzantionChess::Field.to_field("c1") : ByzantionChess::Field.to_field("c8")
+      destination = ByzantionChess::WHITE == info[:piece_color] ? 'c1' : 'c8'
     end
-    move = ByzantionChess::Move.new(king, info[:field], last_move_number, info[:additional_info])
+    move = ByzantionChess::Castle.new(start_field, destination, info[:piece_color],last_move_number)
     move
   end
 
@@ -66,10 +72,11 @@ class Game
 	  
 	  info[:check] = move_string.include?('+')
 	  info[:take] = move_string.include?('x') || move_string.include?(':')
+    info[:mate] = move_string.include?('#')
 
     return info if castle
 
-	  move_string = move_string.delete('+').delete('x').delete(':')
+	  move_string = move_string.delete('+').delete('x').delete(':').delete('#')
 
 	  if(2 == move_string.size)
 	  	info[:piece_type] = ByzantionChess::Pawn

@@ -43,7 +43,7 @@ module ByzantionChess
 
     def get_possible_pieces(piece_type, color, field, additional_info = nil)
       pieces = @board.pieces.select{|piece| piece.kind_of?(piece_type) && piece.color == color}
-      .select{|piece| self.path_is_not_obstructed?(piece, field) && (piece.can_move_to_field?(field) || (piece.can_take_on_field?(field) && field_taken(field)))}
+      .select{|piece| self.path_is_not_obstructed?(piece, field) && (piece.can_move_to_field?(field) || (piece.can_take_on_field?(field) && field_taken(field)) || piece.can_en_passant?(@board, color, field) )}
 
       (pieces.size > 1 && additional_info) ? select_piece_by_additional_info(pieces, additional_info) : pieces
     end
@@ -73,6 +73,12 @@ module ByzantionChess
 
     def destroy_piece_on_field field
       @board.pieces.delete_if{|piece| piece.vertical_line == field.vertical_line && piece.horizontal_line == field.horizontal_line}
+    end
+
+    private
+
+    def select_piece_by_additional_info(pieces, additional_info)
+      pieces.select{|piece| piece.field.to_s.include?(additional_info)}
     end
 
   end

@@ -54,6 +54,7 @@ module ByzantionChess
       destroy_piece_on_field(destination)
       piece.update_position(destination)
       piece.moved = true
+      update_en_passant(move, piece)
       @moves << move
       true
     end
@@ -105,6 +106,16 @@ module ByzantionChess
       @moves << move
 
       true
+    end
+
+    private
+
+    def update_en_passant(move, piece)
+      if piece.kind_of?(Pawn) && (move.start.horizontal_line-move.finish.horizontal_line).abs == 2
+        @additional_info.en_passant = piece
+      else
+        @additional_info.en_passant  = false
+      end
     end
   end
 end

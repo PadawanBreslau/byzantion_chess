@@ -25,6 +25,10 @@ class ByzantionChess::Piece
     can_move_to_field?(field)
   end
 
+  def can_en_passant?(board, color, field)
+    false
+  end
+
   def can_be_promoted?
     false
   end

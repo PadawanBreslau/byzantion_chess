@@ -13,17 +13,5 @@ module ByzantionChess
       board.execute_en_passant(self)
     end
 
-
-=begin
-    def get_pawns
-      return [] if board.moves.empty? || !@board.moves.last.en_passant
-      all_pawns = board.select_piece(ByzantionChess::Pawn, @board.to_move)
-      last_move = @board.moves.last
-      all_pawns.keep_if{|pawn| pawn.horizontal_line == last_move.finish.horizontal_line && (pawn.vertical_line-last_move.finish.vertical_line).abs == 1}
-      puts all_pawns if all_pawns.present?
-      all_pawns
-    end
-=end
-  
   end
 end

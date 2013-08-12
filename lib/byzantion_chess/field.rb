@@ -80,6 +80,10 @@ module ByzantionChess
       Field.new(self.vertical_line+column, self.horizontal_line+line)
     end
 
+    def next_to(field, direction)
+      self.vertical_line == field.vertical_line && self.horizontal_line == field.horizontal_line - direction
+    end
+
     #Checks if two fields are not the same
     def same_field?(field)
       self.vertical_line == field.vertical_line && self.horizontal_line == field.horizontal_line
