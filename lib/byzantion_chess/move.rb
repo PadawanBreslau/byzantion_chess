@@ -15,5 +15,9 @@ module ByzantionChess
     def execute(board)
       board.execute_move(self)
     end
+
+    def to_s
+      "#{@start}-#{@finish}"
+    end
   end 
 end

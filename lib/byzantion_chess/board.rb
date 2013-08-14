@@ -12,6 +12,8 @@ module ByzantionChess
     delegate :is_check, :to => :additional_info, :prefix => false
     delegate :is_mate, :to => :additional_info, :prefix => false
     delegate :to_move, :to => :additional_info, :prefix => false
+    delegate :move_number, :to => :additional_info, :prefix => false
+    delegate :moves_upto_draw, :to => :additional_info, :prefix => false
 
     delegate :select_piece, :to => :board_helper, :prefix => false
     delegate :piece_from, :to => :board_helper, :prefix => false
@@ -51,11 +53,11 @@ module ByzantionChess
       destination = move.finish
       validate_move(move, piece, destination)
 
-      destroy_piece_on_field(destination)
+      taking = destroy_piece_on_field(destination)
       piece.update_position(destination)
       piece.moved = true
       update_en_passant(move, piece)
-      @moves << move
+      update_board_data(move, piece, taking)
       true
     end
 
@@ -72,8 +74,11 @@ module ByzantionChess
       piece.moved = true
       color = piece.color
       update_rook_position(color, type)
-      color == WHITE ? @additional_info.white_castle_possible[type] = false : @additional_info.black_castle_possible[type] = false
-      @moves << move
+      [:long, :short].each do |type|
+        color == WHITE ? @additional_info.white_castle_possible[type] = false : @additional_info.black_castle_possible[type] = false
+      end
+      update_en_passant(move, piece)
+      update_board_data(move, piece, false)
       true
     end
 
@@ -90,7 +95,8 @@ module ByzantionChess
       destroy_piece_on_field(piece_to_be_taken.field)
       piece.update_position(destination)
       piece.moved = true
-      @moves << move
+      update_en_passant(move, piece)
+      update_board_data(move, piece, true)
 
       true
     end
@@ -103,8 +109,8 @@ module ByzantionChess
       destroy_piece_on_field(move.start)
       destroy_piece_on_field(destination)
       self. pieces << move.new_piece.new(destination, piece.color, self, true)
-      @moves << move
-
+      update_en_passant(move, piece)
+      update_board_data(move, piece, false)
       true
     end
 
@@ -114,9 +120,19 @@ module ByzantionChess
       if piece.kind_of?(Pawn) && (move.start.horizontal_line-move.finish.horizontal_line).abs == 2
         @additional_info.en_passant = piece
       else
-        @additional_info.en_passant  = false
+        @additional_info.en_passant = false
       end
     end
+
+
+    def update_board_data(move, piece, taking)
+      @additional_info.update_to_move
+      @moves << move
+      @additional_info.move_up if piece.color == BLACK
+      @additional_info.half_move_up(taking, piece.class)
+
+    end
+
   end
 end
 

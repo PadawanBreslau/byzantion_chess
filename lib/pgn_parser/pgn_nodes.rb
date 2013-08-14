@@ -37,7 +37,7 @@ module Sexp
     def self.save_move(move, body_id, depth=0)
       move = move.text_value.strip
       move_hash = {}
-      
+
       if move.include? "."
         move_split = move.split(".")
         move_hash[:white] = (move_split.size <= 2)
@@ -87,7 +87,7 @@ module Sexp
       move_hash[:is_taking] = move_part.include?("x")
       move_part.delete! "x"
       move_part.strip!
-    
+
       if move_part[0] > "A" && move_part[0] < "Z"
         move_hash[:piece] = move_part[0]
         move_part = move_part[1..-1]
@@ -99,37 +99,6 @@ module Sexp
       move_hash[:finish_field] = move_part[-2..-1]
 
       return move_hash
-    end
-
-    def self.save_variation(move, body_id, depth)
-      var_moves = move.elements[0].elements
-      last_read_move = 0
-      
-      var_moves.each do |varmove|
-
-        ### MOVE
-
-        if varmove.class.name == "Sexp::PMove"
-          last_read_move = Sexp::PMove.save_move(varmove, body_id, depth)
-
-          #### COMMENT
-
-        elsif varmove.class.name == "Sexp::PComment"
-          Sexp::PComment.save_comment(varmove, body_id, last_read_move)
-
-          ### VARIATION
-
-        elsif varmove.class.name == "Sexp::PVariation"
-          new_depth = depth+1
-          Sexp::PMove.save_variation(varmove, body_id, new_depth)
-
-          ### CASTLE
-
-        elsif varmove.class.name == "Sexp::PCastle"
-          new_depth = depth+1
-          last_read_move = Sexp::PMove.save_move(varmove, body_id, new_depth)
-        end
-      end
     end
 
   end

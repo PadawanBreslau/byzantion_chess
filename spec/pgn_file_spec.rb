@@ -79,8 +79,16 @@ describe PgnFile do
       pgn_file.games.size.should eql 211
       game = pgn_file.games.first
       game.should be_kind_of(Game)
-      game.convert_body_to_moves.should be_true
       game.moves.should_not be_empty
+      pgn_file.games.each do |game|
+        board = ByzantionChess::Board.new
+        board_before_move = board.dup
+        game.moves.each do |move|
+          expect{move.execute(board)}.not_to raise_error
+        end
+        board.writeFEN
+      board_before_move.should_not eql board
+      end
     end
 
 

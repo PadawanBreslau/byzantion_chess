@@ -2,11 +2,11 @@ class AdditionalMoveInfo
 
   attr_reader :number, :promotion_to, :color
 
-  def initialize(color, number)
+  def initialize(color, number, comment=nil)
     raise ByzantionChess::InvalidMoveException.new("Invalid color: #{color}") unless [ByzantionChess::WHITE, ByzantionChess::BLACK].include? color
     @color = color
     @number = number
-    #@promotion_to = promotion_to
+    @comment = comment
   end
 
 end

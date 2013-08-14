@@ -72,7 +72,9 @@ module ByzantionChess
     end
 
     def destroy_piece_on_field field
+      pieces_count = @board.pieces.count
       @board.pieces.delete_if{|piece| piece.vertical_line == field.vertical_line && piece.horizontal_line == field.horizontal_line}
+      return pieces_count != @board.pieces.count
     end
 
     private

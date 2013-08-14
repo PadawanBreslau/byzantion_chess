@@ -38,6 +38,7 @@ class Parser
       root_node.elements.each{|game| self.parse_one_game(game) }
     end
 
+
     def self.parse_one_game(game_root)
       return if game_root.elements.nil?
       header = game_root.elements[0]
@@ -70,14 +71,14 @@ class Parser
           last_read_move = Sexp::PMove.save_move(body_element, body_id)
 
         elsif body_element.class.name == "Sexp::PComment"
-          Sexp::PComment.save_comment(body_element, body_id, last_read_move)
+          #Sexp::PComment.save_comment(body_element, body_id, last_read_move)
 
         elsif body_element.class.name == "Sexp::PVariation"
-          depth = 1;
-          Sexp::PMove.save_variation(body_element, body_id, depth)
+          #depth = 1;
+          #Sexp::PMove.save_variation(body_element, body_id, depth)
           
         elsif body_element.class.name == "Sexp::PCastle"
-          last_read_move = Sexp::PMove.save_move(body_element, body_id)
+          #last_read_move = Sexp::PMove.save_move(body_element, body_id)
 
         end
       end

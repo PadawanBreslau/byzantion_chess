@@ -12,7 +12,11 @@ describe ByzantionChess::Board do
 
     it 'should create board with additional info' do
       board = ByzantionChess::Board.new
-      board.white_castle_possible.should be_true
+      board.white_castle_possible[:long].should be_true
+      board.white_castle_possible[:short].should be_true
+      board.black_castle_possible[:long].should be_true
+      board.black_castle_possible[:short].should be_true
+      board.to_s.should eql 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'
     end
 
     it 'should create a new board with initial position' do
@@ -75,17 +79,20 @@ describe ByzantionChess::Board do
 
     it 'should be able to make moves' do
       board = ByzantionChess::Board.new
+      board.to_s.should eql 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'
       move1 = ByzantionChess::Move.new("e2","e4", ByzantionChess::WHITE, 1)
       board.piece_from('e2').should be_a_kind_of ByzantionChess::Pawn
       expect{move1.execute(board)}.not_to raise_error
       board.piece_from('e2').should be_false
       board.piece_from('e4').should be_a_kind_of ByzantionChess::Pawn
+      board.to_s.should eql 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e4 0 1'
 
       move2 = ByzantionChess::Move.new("d7","d5", ByzantionChess::BLACK, 1)
       board.piece_from("d7").should be_a_kind_of ByzantionChess::Pawn
       expect{move2.execute(board)}.not_to raise_error
       board.piece_from("d7").should be_false
       board.piece_from("d5").should be_a_kind_of ByzantionChess::Pawn
+      board.to_s.should eql 'rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq d5 0 2'
 
       move3 = ByzantionChess::Move.new("e4", "d5", ByzantionChess::WHITE, 2)
       board.piece_from("e4").should be_a_kind_of ByzantionChess::Pawn
@@ -95,6 +102,7 @@ describe ByzantionChess::Board do
       board.piece_from("e4").should be_false
       board.piece_from("d5").should be_a_kind_of ByzantionChess::Pawn
       board.piece_from("d5").color.should eql ByzantionChess::WHITE
+      board.to_s.should eql 'rnbqkbnr/ppp1pppp/8/3P4/8/8/PPPP1PPP/RNBQKBNR b KQkq - 0 2'
 
       move4 = ByzantionChess::Move.new("g8", "f6", ByzantionChess::BLACK, 2)
       board.piece_from("f6").should be_false
@@ -103,6 +111,8 @@ describe ByzantionChess::Board do
       board.piece_from("g8").should be_false
       board.piece_from("f6").should be_a_kind_of ByzantionChess::Knight
       board.piece_from("f6").color.should eql ByzantionChess::BLACK
+      board.to_s.should eql 'rnbqkb1r/ppp1pppp/5n2/3P4/8/8/PPPP1PPP/RNBQKBNR w KQkq - 1 3'
+
 
       move5 = ByzantionChess::Move.new("g1", "f3", ByzantionChess::WHITE, 3)
       board.piece_from("f3").should be_false
@@ -111,12 +121,16 @@ describe ByzantionChess::Board do
       board.piece_from("g1").should be_false
       board.piece_from("f3").should be_a_kind_of ByzantionChess::Knight
       board.piece_from("f3").color.should eql ByzantionChess::WHITE
+      board.to_s.should eql 'rnbqkb1r/ppp1pppp/5n2/3P4/8/5N2/PPPP1PPP/RNBQKB1R b KQkq - 2 3'
+
 
       move6 = ByzantionChess::Move.new("g7","g6", ByzantionChess::BLACK, 3)
       board.piece_from("g7").should be_a_kind_of ByzantionChess::Pawn
       expect{move6.execute(board)}.not_to raise_error
       board.piece_from("g7").should be_false
       board.piece_from("g6").should be_a_kind_of ByzantionChess::Pawn
+      board.to_s.should eql 'rnbqkb1r/ppp1pp1p/5np1/3P4/8/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 4'
+
 
       move7 = ByzantionChess::Move.new("f1", "d3", ByzantionChess::WHITE, 4)
       board.piece_from("f1").should be_a_kind_of ByzantionChess::Bishop
@@ -125,6 +139,8 @@ describe ByzantionChess::Board do
       board.piece_from("f1").should be_false
       board.piece_from("d3").should be_a_kind_of ByzantionChess::Bishop
       board.piece_from("d3").color.should eql ByzantionChess::WHITE
+      board.to_s.should eql 'rnbqkb1r/ppp1pp1p/5np1/3P4/8/3B1N2/PPPP1PPP/RNBQK2R b KQkq - 1 4'
+
 
       move8 = ByzantionChess::Move.new("b8", "d7", ByzantionChess::BLACK, 4)
       board.piece_from("d7").should be_false
@@ -133,6 +149,8 @@ describe ByzantionChess::Board do
       board.piece_from("b8").should be_false
       board.piece_from("d7").should be_a_kind_of ByzantionChess::Knight
       board.piece_from("d7").color.should eql ByzantionChess::BLACK
+      board.to_s.should eql 'r1bqkb1r/pppnpp1p/5np1/3P4/8/3B1N2/PPPP1PPP/RNBQK2R w KQkq - 2 5'
+
 
       move9 = ByzantionChess::Castle.new("e1", "g1", ByzantionChess::WHITE, 5)
       board.piece_from("g1").should be_false
@@ -144,6 +162,8 @@ describe ByzantionChess::Board do
       board.piece_from("h1").should be_false
       board.piece_from("g1").should be_a_kind_of ByzantionChess::King
       board.piece_from("f1").should be_a_kind_of ByzantionChess::Rook
+      board.to_s.should eql 'r1bqkb1r/pppnpp1p/5np1/3P4/8/3B1N2/PPPP1PPP/RNBQ1RK1 b kq - 3 5'
+
 
       move10 = ByzantionChess::Move.new("c7", "c5", ByzantionChess::BLACK, 5)
       board.piece_from("c7").should be_a_kind_of ByzantionChess::Pawn
@@ -151,6 +171,8 @@ describe ByzantionChess::Board do
       expect{move10.execute(board)}.not_to raise_error
       board.piece_from("c5").should be_a_kind_of ByzantionChess::Pawn
       board.piece_from("c7").should be_false
+      board.to_s.should eql 'r1bqkb1r/pp1npp1p/5np1/2pP4/8/3B1N2/PPPP1PPP/RNBQ1RK1 w kq c5 0 6'
+
 
       move11 = ByzantionChess::EnPassant.new("d5","c6", ByzantionChess::WHITE, 6)
       move11.should be_a_kind_of(ByzantionChess::EnPassant)
@@ -161,6 +183,8 @@ describe ByzantionChess::Board do
       board.piece_from("d5").should be_false
       board.piece_from("c5").should be_false
       board.piece_from("c6").should be_a_kind_of ByzantionChess::Pawn
+      board.to_s.should eql 'r1bqkb1r/pp1npp1p/2P2np1/8/8/3B1N2/PPPP1PPP/RNBQ1RK1 b kq - 0 6'
+
 
       move12 = ByzantionChess::Move.new("f8","g7", ByzantionChess::BLACK, 6)
       board.piece_from("f8").should be_a_kind_of ByzantionChess::Bishop
@@ -169,6 +193,8 @@ describe ByzantionChess::Board do
       board.piece_from("f8").should be_false
       board.piece_from("g7").should be_a_kind_of ByzantionChess::Bishop
       board.piece_from("g7").color.should eql ByzantionChess::BLACK
+      board.to_s.should eql 'r1bqk2r/pp1nppbp/2P2np1/8/8/3B1N2/PPPP1PPP/RNBQ1RK1 w kq - 1 7'
+
 
       move13 = ByzantionChess::Move.new("c6","b7", ByzantionChess::WHITE, 7)
       board.piece_from("c6").should be_a_kind_of ByzantionChess::Pawn
@@ -178,6 +204,8 @@ describe ByzantionChess::Board do
       board.piece_from("c6").should be_false
       board.piece_from("b7").should be_a_kind_of ByzantionChess::Pawn
       board.piece_from("b7").color.should eql ByzantionChess::WHITE
+      board.to_s.should eql 'r1bqk2r/pP1nppbp/5np1/8/8/3B1N2/PPPP1PPP/RNBQ1RK1 b kq - 0 7'
+
 
       move14 = ByzantionChess::Castle.new("e8", "g8", ByzantionChess::BLACK, 7)
       board.piece_from("g8").should be_false
@@ -189,6 +217,8 @@ describe ByzantionChess::Board do
       board.piece_from("h8").should be_false
       board.piece_from("g8").should be_a_kind_of ByzantionChess::King
       board.piece_from("f8").should be_a_kind_of ByzantionChess::Rook
+      board.to_s.should eql 'r1bq1rk1/pP1nppbp/5np1/8/8/3B1N2/PPPP1PPP/RNBQ1RK1 w - - 1 8'
+
 
       move15 = ByzantionChess::Promotion.new(ByzantionChess::Queen, "b7", "a8", ByzantionChess::WHITE, 8)
       board.piece_from("b7").should be_a_kind_of ByzantionChess::Pawn
@@ -197,17 +227,8 @@ describe ByzantionChess::Board do
       board.piece_from("a8").should be_a_kind_of ByzantionChess::Queen
       board.piece_from("a8").color.should eql ByzantionChess::WHITE
       board.piece_from("b7").should be_false
+      board.to_s.should eql 'Q1bq1rk1/p2nppbp/5np1/8/8/3B1N2/PPPP1PPP/RNBQ1RK1 b - - 0 8'
 
-
-=begin
-
-      pawn9 = board.piece_from("b7")
-      move15 = ByzantionChess::Move.new(pawn9, "a8", 8)
-      move15.set_promoted_to(ByzantionChess::Queen)
-      expect{board.make_move(move15)}.not_to raise_error
-      board.piece_from("b7").should be_false
-      board.piece_from("a8").should be_kind_of ByzantionChess::Queen
-=end
     end
 
   end

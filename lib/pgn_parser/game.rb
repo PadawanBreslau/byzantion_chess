@@ -21,7 +21,6 @@ class Game
         info = return_move_information(move_text)
         last_move_number = info[:move_number] if info[:move_number]
         pieces = board.get_possible_pieces(info[:piece_type], info[:piece_color], info[:field], info[:additional_info])
-        debugger unless pieces.size == 1
         raise ByzantionChess::InvalidMoveException.new("Too many or too few pieces to make move: #{pieces.size}") unless pieces.size == 1
         piece = pieces.first
         if info[:promoted_piece]

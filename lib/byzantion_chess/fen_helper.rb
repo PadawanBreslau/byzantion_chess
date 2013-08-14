@@ -47,11 +47,65 @@ module ByzantionChess
     end
 
     def writeFEN
-      #TODO
-      return "fen"
+      result = ''
+
+      8.downto(1) do |i|
+        pieces = @board.pieces.select{|piece| piece.field.horizontal_line == i}.sort{|p1,p2| p1.field.vertical_line <=> p2.field.vertical_line}.map{|p| {:klass => p.class, :color => p.color, :line => p.vertical_line}}
+        one_line = create_fen_line(pieces)
+        result << one_line
+        result << '/' unless i == 1
+      end
+      result.concat(additional_info)
+      result
     end
 
+    private
 
+    def piece_to_literal(klass,color)
+      letter = {"ByzantionChess::King" => "k", "ByzantionChess::Queen" => "q","ByzantionChess::Rook" => "r",
+       "ByzantionChess::Bishop" => "b","ByzantionChess::Knight" => "n","ByzantionChess::Pawn" => "p"}[klass]
+      ByzantionChess::WHITE == color ? letter.upcase : letter
+    end
+
+    def create_fen_line(pieces)
+      result = ''
+      border = 1
+      pieces.each do |piece|
+        border_offset = piece[:line] - border
+        result.concat(border_offset.to_s) if border_offset > 0
+        result.concat(piece_to_literal(piece[:klass].to_s, piece[:color]))
+        border = piece[:line] + 1
+      end
+      result.concat((9-border).to_s) if 9-border > 0
+      result
+    end
+
+    def additional_info
+      result = ' '
+      color = @board.to_move == WHITE ? 'w' : 'b'
+      castle = add_castle_info
+      result.concat(color).concat(castle)
+      if @board.en_passant then
+        result.concat(@board.en_passant.field.to_s)
+      else
+        result.concat('-')
+      end
+      result.concat(" #{@board.moves_upto_draw} #{@board.move_number}")
+      result
+    end
+
+    def add_castle_info
+      result = ' '
+      wc = @board.white_castle_possible
+      bc = @board.black_castle_possible
+      result.concat('K') if wc[:short]
+      result.concat('Q') if wc[:long]
+      result.concat('k') if bc[:short]
+      result.concat('q') if bc[:long]
+      result.concat('-')  if !wc[:long] && !wc[:short] && !bc[:long] && !bc[:short]
+      result.concat(' ')
+      result
+    end
 
   end
 end
