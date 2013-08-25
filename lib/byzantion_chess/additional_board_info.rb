@@ -34,5 +34,8 @@ class AdditionalBoardInfo
     end
   end
 
+  def not_to_move
+    @to_move == ByzantionChess::WHITE ? ByzantionChess::BLACK : ByzantionChess::WHITE
+  end
 
 end

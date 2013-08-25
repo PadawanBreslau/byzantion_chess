@@ -25,7 +25,7 @@ describe PgnFile do
   context 'parsing pgn file' do
   	it 'should parse a one game valid file' do
   		pgn_file = PgnFile.new('./spec/example_pgns/p.pgn')
-  		expect{pgn_file.load_and_parse_games}.not_to raise_error
+      expect{pgn_file.load_and_parse_games}.not_to raise_error
       pgn_file.load_and_parse_games.should be_true
       pgn_file.games.should_not be_nil
       pgn_file.games.size.should eql 1
@@ -42,12 +42,24 @@ describe PgnFile do
       game.body.should_not be_nil
       game.body.should be_kind_of Sexp::PAllMovesWithResult
       @board = ByzantionChess::Board.new
-      game.moves.each do |move|
+      game.moves['0'].each do |move|
         board_before_move = @board.dup
         expect{move.execute(@board)}.not_to raise_error
         board_before_move.should_not eql @board
       end
-      #TODO - check position
+      commented_moves = game.moves['0'].select{|m| m.comment.present?}
+      commented_moves.should_not be_empty
+      commented_moves.count.should eql 2
+      commented_moves.first.comment.should eql 'Jestem wesoly Romek'
+    end
+
+    it 'should properly read variations' do
+      pgn_file = PgnFile.new('./spec/example_pgns/v.pgn')
+      expect{pgn_file.load_and_parse_games}.not_to raise_error
+      game = pgn_file.games.first
+      game.moves['0'].select{|m| m.variation_info.level == 0}.count.should eql 4
+      game.moves['1'].select{|m| m.variation_info.level == 1}.count.should eql 3
+
     end
 
     it 'should parse a one game valid file - 2' do
@@ -62,7 +74,7 @@ describe PgnFile do
       game.body.should_not be_nil
       game.body.should be_kind_of Sexp::PAllMovesWithResult
       @board = ByzantionChess::Board.new
-      game.moves.each do |move|
+      game.moves['0'].each do |move|
         board_before_move = @board.dup
         expect{move.execute(@board)}.not_to raise_error
         board_before_move.should_not eql @board
@@ -83,7 +95,7 @@ describe PgnFile do
       pgn_file.games.each do |game|
         board = ByzantionChess::Board.new
         board_before_move = board.dup
-        game.moves.each do |move|
+        game.moves['0'].each do |move|
           expect{move.execute(board)}.not_to raise_error
         end
         board.writeFEN

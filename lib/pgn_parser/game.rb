@@ -6,42 +6,53 @@ class Game
 	def initialize(parsed_game)
     @header = parsed_game.elements.first.create_value_hash
     @body = parsed_game.elements.last
-	  @moves = []
+	  @moves = Hash.new { |hash, key| hash[key] = [] }
 	end
 
 	def convert_body_to_moves
-	  last_move_number = 0
-	  board = ByzantionChess::Board.new
-	  @body.elements.each do |move|
-	    next if !move.kind_of?(Sexp::PMove) && !move.kind_of?(Sexp::PCastle)
-	    if move.kind_of?(Sexp::PCastle)
-        move = create_castle(move, board, last_move_number)
-      else
-        move_text = move.text_value
-        info = return_move_information(move_text)
-        last_move_number = info[:move_number] if info[:move_number]
-        pieces = board.get_possible_pieces(info[:piece_type], info[:piece_color], info[:field], info[:additional_info])
-        raise ByzantionChess::InvalidMoveException.new("Too many or too few pieces to make move: #{pieces.size}") unless pieces.size == 1
-        piece = pieces.first
-        if info[:promoted_piece]
-          move = ByzantionChess::Promotion.new(info[:promoted_piece], piece.field, info[:field], piece.color, last_move_number)
-        elsif  piece.kind_of?(ByzantionChess::Pawn) && !board.piece_from(info[:field]) && info[:take]
-          move = ByzantionChess::EnPassant.new(piece.field, info[:field], piece.color, last_move_number)
-        else
-          move = ByzantionChess::Move.new(piece.field, info[:field], piece.color, last_move_number)
-        end
-      end
-	    move.execute(board)
-      @moves << move
-    end
+    extract_one_level_elements(@body.elements, ByzantionChess::Board.new, 0)
     return true
-	end
+  end
+
+  def extract_one_level_elements(elements, board, level = 0)
+    elements.each do |move|
+      if move.kind_of?(Sexp::PMove) || move.kind_of?(Sexp::PCastle)
+        if move.kind_of?(Sexp::PCastle)
+          move = create_castle(move, board)
+        else
+          move_text = move.text_value
+          info = return_move_information(move_text)
+          last_move_number = info[:move_number] if info[:move_number]
+          pieces = board.get_possible_pieces(info[:piece_type], info[:piece_color], info[:field], info[:additional_info])
+          raise ByzantionChess::InvalidMoveException.new("Too many or too few pieces to make move: #{move.text_value} : #{pieces.size}") unless pieces.size == 1
+          piece = pieces.first
+          if info[:promoted_piece]
+            move = ByzantionChess::Promotion.new(info[:promoted_piece], piece.field, info[:field], piece.color, last_move_number)
+          elsif  piece.kind_of?(ByzantionChess::Pawn) && !board.piece_from(info[:field]) && info[:take]
+            move = ByzantionChess::EnPassant.new(piece.field, info[:field], piece.color, last_move_number)
+          else
+            move = ByzantionChess::Move.new(piece.field, info[:field], piece.color, last_move_number)
+          end
+          move.variation_info.level = level
+        end
+        move.execute(board)
+        @moves[level.to_s] << move
+      elsif move.kind_of?(Sexp::PCommentWithBracket)
+        comment = move.return_comment
+        last_move = @moves[level.to_s].last
+        last_move.additional_info.comment = comment
+      elsif move.kind_of?(Sexp::PVariation)
+        extract_one_level_elements(move.elements.last.elements, ByzantionChess::Board.new(board.fens[-2], board.not_to_move, board.additional_infos[-2].dup), level.next)
+      end
+    end
+  end
 
 	private
 
-  def create_castle(move, board, last_move_number)
+  def create_castle(move, board)
     move_text = move.text_value
     info = return_move_information(move_text, true)
+    last_move_number = info[:move_number] if info[:move_number]
     start_field = ByzantionChess::WHITE == info[:piece_color] ? 'e1' : 'e8'
 
     if 2 == move_text.split('-').size

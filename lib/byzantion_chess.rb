@@ -19,6 +19,7 @@ require 'byzantion_chess/additional_board_info'
 require 'byzantion_chess/board_helper'
 require 'byzantion_chess/fen_helper'
 require 'byzantion_chess/castle_helper'
+require 'byzantion_chess/variation_info'
 require 'pgn_parser/parser.rb'
 require 'pgn_parser/game.rb'
 

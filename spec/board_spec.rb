@@ -86,6 +86,8 @@ describe ByzantionChess::Board do
       board.piece_from('e2').should be_false
       board.piece_from('e4').should be_a_kind_of ByzantionChess::Pawn
       board.to_s.should eql 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e4 0 1'
+      move1.variation_info.level.should eql 0
+      move1.variation_info.previous_move.should be_nil
 
       move2 = ByzantionChess::Move.new("d7","d5", ByzantionChess::BLACK, 1)
       board.piece_from("d7").should be_a_kind_of ByzantionChess::Pawn
@@ -93,6 +95,8 @@ describe ByzantionChess::Board do
       board.piece_from("d7").should be_false
       board.piece_from("d5").should be_a_kind_of ByzantionChess::Pawn
       board.to_s.should eql 'rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq d5 0 2'
+      move2.variation_info.level.should eql 0
+      move2.variation_info.previous_move.should eql move1
 
       move3 = ByzantionChess::Move.new("e4", "d5", ByzantionChess::WHITE, 2)
       board.piece_from("e4").should be_a_kind_of ByzantionChess::Pawn
@@ -103,6 +107,8 @@ describe ByzantionChess::Board do
       board.piece_from("d5").should be_a_kind_of ByzantionChess::Pawn
       board.piece_from("d5").color.should eql ByzantionChess::WHITE
       board.to_s.should eql 'rnbqkbnr/ppp1pppp/8/3P4/8/8/PPPP1PPP/RNBQKBNR b KQkq - 0 2'
+      move3.variation_info.level.should eql 0
+      move3.variation_info.previous_move.should eql move2
 
       move4 = ByzantionChess::Move.new("g8", "f6", ByzantionChess::BLACK, 2)
       board.piece_from("f6").should be_false
@@ -112,6 +118,8 @@ describe ByzantionChess::Board do
       board.piece_from("f6").should be_a_kind_of ByzantionChess::Knight
       board.piece_from("f6").color.should eql ByzantionChess::BLACK
       board.to_s.should eql 'rnbqkb1r/ppp1pppp/5n2/3P4/8/8/PPPP1PPP/RNBQKBNR w KQkq - 1 3'
+      move4.variation_info.level.should eql 0
+      move4.variation_info.previous_move.should eql move3
 
 
       move5 = ByzantionChess::Move.new("g1", "f3", ByzantionChess::WHITE, 3)
@@ -122,6 +130,9 @@ describe ByzantionChess::Board do
       board.piece_from("f3").should be_a_kind_of ByzantionChess::Knight
       board.piece_from("f3").color.should eql ByzantionChess::WHITE
       board.to_s.should eql 'rnbqkb1r/ppp1pppp/5n2/3P4/8/5N2/PPPP1PPP/RNBQKB1R b KQkq - 2 3'
+      move5.variation_info.level.should eql 0
+      move5.variation_info.previous_move.should eql move4
+
 
 
       move6 = ByzantionChess::Move.new("g7","g6", ByzantionChess::BLACK, 3)
@@ -130,6 +141,9 @@ describe ByzantionChess::Board do
       board.piece_from("g7").should be_false
       board.piece_from("g6").should be_a_kind_of ByzantionChess::Pawn
       board.to_s.should eql 'rnbqkb1r/ppp1pp1p/5np1/3P4/8/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 4'
+      move6.variation_info.level.should eql 0
+      move6.variation_info.previous_move.should eql move5
+
 
 
       move7 = ByzantionChess::Move.new("f1", "d3", ByzantionChess::WHITE, 4)
@@ -140,6 +154,8 @@ describe ByzantionChess::Board do
       board.piece_from("d3").should be_a_kind_of ByzantionChess::Bishop
       board.piece_from("d3").color.should eql ByzantionChess::WHITE
       board.to_s.should eql 'rnbqkb1r/ppp1pp1p/5np1/3P4/8/3B1N2/PPPP1PPP/RNBQK2R b KQkq - 1 4'
+      move7.variation_info.level.should eql 0
+      move7.variation_info.previous_move.should eql move6
 
 
       move8 = ByzantionChess::Move.new("b8", "d7", ByzantionChess::BLACK, 4)
@@ -150,7 +166,8 @@ describe ByzantionChess::Board do
       board.piece_from("d7").should be_a_kind_of ByzantionChess::Knight
       board.piece_from("d7").color.should eql ByzantionChess::BLACK
       board.to_s.should eql 'r1bqkb1r/pppnpp1p/5np1/3P4/8/3B1N2/PPPP1PPP/RNBQK2R w KQkq - 2 5'
-
+      move8.variation_info.level.should eql 0
+      move8.variation_info.previous_move.should eql move7
 
       move9 = ByzantionChess::Castle.new("e1", "g1", ByzantionChess::WHITE, 5)
       board.piece_from("g1").should be_false
@@ -163,6 +180,9 @@ describe ByzantionChess::Board do
       board.piece_from("g1").should be_a_kind_of ByzantionChess::King
       board.piece_from("f1").should be_a_kind_of ByzantionChess::Rook
       board.to_s.should eql 'r1bqkb1r/pppnpp1p/5np1/3P4/8/3B1N2/PPPP1PPP/RNBQ1RK1 b kq - 3 5'
+      move9.variation_info.level.should eql 0
+      move9.variation_info.previous_move.should eql move8
+
 
 
       move10 = ByzantionChess::Move.new("c7", "c5", ByzantionChess::BLACK, 5)
@@ -171,7 +191,12 @@ describe ByzantionChess::Board do
       expect{move10.execute(board)}.not_to raise_error
       board.piece_from("c5").should be_a_kind_of ByzantionChess::Pawn
       board.piece_from("c7").should be_false
-      board.to_s.should eql 'r1bqkb1r/pp1npp1p/5np1/2pP4/8/3B1N2/PPPP1PPP/RNBQ1RK1 w kq c5 0 6'
+      fen = 'r1bqkb1r/pp1npp1p/5np1/2pP4/8/3B1N2/PPPP1PPP/RNBQ1RK1 w kq c5 0 6'
+      board.to_s.should eql fen
+      board.fens.last.should eql fen
+      move10.variation_info.level.should eql 0
+      move10.variation_info.previous_move.should eql move9
+
 
 
       move11 = ByzantionChess::EnPassant.new("d5","c6", ByzantionChess::WHITE, 6)
@@ -183,7 +208,12 @@ describe ByzantionChess::Board do
       board.piece_from("d5").should be_false
       board.piece_from("c5").should be_false
       board.piece_from("c6").should be_a_kind_of ByzantionChess::Pawn
-      board.to_s.should eql 'r1bqkb1r/pp1npp1p/2P2np1/8/8/3B1N2/PPPP1PPP/RNBQ1RK1 b kq - 0 6'
+      fen = 'r1bqkb1r/pp1npp1p/2P2np1/8/8/3B1N2/PPPP1PPP/RNBQ1RK1 b kq - 0 6'
+      board.to_s.should eql fen
+      board.fens.last.should eql fen
+      move11.variation_info.level.should eql 0
+      move11.variation_info.previous_move.should eql move10
+
 
 
       move12 = ByzantionChess::Move.new("f8","g7", ByzantionChess::BLACK, 6)
@@ -193,7 +223,12 @@ describe ByzantionChess::Board do
       board.piece_from("f8").should be_false
       board.piece_from("g7").should be_a_kind_of ByzantionChess::Bishop
       board.piece_from("g7").color.should eql ByzantionChess::BLACK
-      board.to_s.should eql 'r1bqk2r/pp1nppbp/2P2np1/8/8/3B1N2/PPPP1PPP/RNBQ1RK1 w kq - 1 7'
+      fen = 'r1bqk2r/pp1nppbp/2P2np1/8/8/3B1N2/PPPP1PPP/RNBQ1RK1 w kq - 1 7'
+      board.to_s.should eql fen
+      board.fens.last.should eql fen
+      move12.variation_info.level.should eql 0
+      move12.variation_info.previous_move.should eql move11
+
 
 
       move13 = ByzantionChess::Move.new("c6","b7", ByzantionChess::WHITE, 7)
@@ -204,7 +239,12 @@ describe ByzantionChess::Board do
       board.piece_from("c6").should be_false
       board.piece_from("b7").should be_a_kind_of ByzantionChess::Pawn
       board.piece_from("b7").color.should eql ByzantionChess::WHITE
-      board.to_s.should eql 'r1bqk2r/pP1nppbp/5np1/8/8/3B1N2/PPPP1PPP/RNBQ1RK1 b kq - 0 7'
+      fen ='r1bqk2r/pP1nppbp/5np1/8/8/3B1N2/PPPP1PPP/RNBQ1RK1 b kq - 0 7'
+      board.to_s.should eql fen
+      board.fens.last.should eql fen
+      move13.variation_info.level.should eql 0
+      move13.variation_info.previous_move.should eql move12
+
 
 
       move14 = ByzantionChess::Castle.new("e8", "g8", ByzantionChess::BLACK, 7)
@@ -217,7 +257,11 @@ describe ByzantionChess::Board do
       board.piece_from("h8").should be_false
       board.piece_from("g8").should be_a_kind_of ByzantionChess::King
       board.piece_from("f8").should be_a_kind_of ByzantionChess::Rook
-      board.to_s.should eql 'r1bq1rk1/pP1nppbp/5np1/8/8/3B1N2/PPPP1PPP/RNBQ1RK1 w - - 1 8'
+      fen = 'r1bq1rk1/pP1nppbp/5np1/8/8/3B1N2/PPPP1PPP/RNBQ1RK1 w - - 1 8'
+      board.to_s.should eql fen
+      board.fens.last.should eql fen
+      move14.variation_info.level.should eql 0
+      move14.variation_info.previous_move.should eql move13
 
 
       move15 = ByzantionChess::Promotion.new(ByzantionChess::Queen, "b7", "a8", ByzantionChess::WHITE, 8)
@@ -227,8 +271,14 @@ describe ByzantionChess::Board do
       board.piece_from("a8").should be_a_kind_of ByzantionChess::Queen
       board.piece_from("a8").color.should eql ByzantionChess::WHITE
       board.piece_from("b7").should be_false
-      board.to_s.should eql 'Q1bq1rk1/p2nppbp/5np1/8/8/3B1N2/PPPP1PPP/RNBQ1RK1 b - - 0 8'
+      fen = 'Q1bq1rk1/p2nppbp/5np1/8/8/3B1N2/PPPP1PPP/RNBQ1RK1 b - - 0 8'
+      board.to_s.should eql fen
+      board.fens.last.should eql fen
+      move15.variation_info.level.should eql 0
+      move15.variation_info.previous_move.should eql move14
 
+      board.moves.should_not be_empty
+      board.fens.should_not be_empty
     end
 
   end

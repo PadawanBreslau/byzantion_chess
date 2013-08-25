@@ -1,7 +1,7 @@
 module ByzantionChess
   class Board
 
-    attr_reader :pieces, :moves, :additional_info, :board_helper, :fen_helper, :castle_helper
+    attr_reader :pieces, :moves, :fens, :additional_infos, :additional_info, :board_helper, :fen_helper, :castle_helper
 
     delegate :readFEN, :to => :fen_helper, :prefix => false
     delegate :writeFEN, :to => :fen_helper, :prefix => false
@@ -14,6 +14,7 @@ module ByzantionChess
     delegate :to_move, :to => :additional_info, :prefix => false
     delegate :move_number, :to => :additional_info, :prefix => false
     delegate :moves_upto_draw, :to => :additional_info, :prefix => false
+    delegate :not_to_move, :to => :additional_info, :prefix => false
 
     delegate :select_piece, :to => :board_helper, :prefix => false
     delegate :piece_from, :to => :board_helper, :prefix => false
@@ -31,14 +32,17 @@ module ByzantionChess
     delegate :castle_possible?, :to => :castle_helper, :prefix => false
 
 
-    def initialize(fen = nil, to_move = WHITE)
-      @additional_info = AdditionalBoardInfo.new(to_move)
+    def initialize(fen = nil, to_move = WHITE, additional_info=nil)
+      @additional_info = additional_info || AdditionalBoardInfo.new(self)
       @board_helper = BoardHelper.new(self)
       @fen_helper = FenHelper.new(self)
       @castle_helper = CastleHelper.new(self)
       @pieces = []
       @moves = []
-      fen.present? ? readFEN(fen) : readFEN(START_POSITION)
+      fen ||= START_POSITION
+      readFEN(fen)
+      @fens = [fen]
+      @additional_infos = [@additional_info]
       raise 'Unsuccessful Board initialisation - invalid_position' unless self.valid_position?
     end
 
@@ -108,7 +112,7 @@ module ByzantionChess
       validate_move(move, piece, destination)
       destroy_piece_on_field(move.start)
       destroy_piece_on_field(destination)
-      self. pieces << move.new_piece.new(destination, piece.color, self, true)
+      self.pieces << move.new_piece.new(destination, piece.color, self, true)
       update_en_passant(move, piece)
       update_board_data(move, piece, false)
       true
@@ -127,10 +131,18 @@ module ByzantionChess
 
     def update_board_data(move, piece, taking)
       @additional_info.update_to_move
+      if @moves.present? && move.variation_info.level == 0
+        last_move = @moves.last
+        move.variation_info.previous_move = last_move
+      elsif @moves.present? && move.variation_info.level != 1
+        last_move = @moves[-2]
+        move.variation_info.previous_move = last_move
+      end
       @moves << move
-      @additional_info.move_up if piece.color == BLACK
+      @additional_info.move_up if piece.color == BLACK   #TODO Jak liczyć ruchy i polruch z wariantami?
       @additional_info.half_move_up(taking, piece.class)
-
+      @fens << self.writeFEN
+      @additional_infos << @additional_info
     end
 
   end

@@ -21,7 +21,7 @@ grammar Sexp
 ## BODY PART
 
   rule all_moves
-   ( move / comment / variation / castle / special_sign )* <PAllMovesWithResult>
+   ( move / comment_with_brackets / variation / castle / special_sign )* <PAllMovesWithResult>
   end
 
   rule move
@@ -37,8 +37,12 @@ grammar Sexp
   end
 
 
+  rule comment_with_brackets
+    "{" comment "}" space?  <PCommentWithBracket>
+  end
+
   rule comment
-    "{" space? new_line? float? ( identifier space? )* "}" space? <PComment>
+    space? new_line? float? ( identifier space? )* <PComment>
   end
 
 

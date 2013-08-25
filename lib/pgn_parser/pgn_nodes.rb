@@ -109,15 +109,16 @@ module Sexp
 
 
   class PComment < Treetop::Runtime::SyntaxNode
-    def self.save_comment comment, body_id, last_move
-      c = {}
-      c[:body_id] = body_id
-      c[:content] = comment.text_value
-      c[:last_move_id] = last_move
 
-      c
+  end
+
+
+  class PCommentWithBracket < Treetop::Runtime::SyntaxNode
+    def return_comment
+      self.elements.first.text_value.strip
     end
   end
+
 
   class PVariation < Treetop::Runtime::SyntaxNode
 
