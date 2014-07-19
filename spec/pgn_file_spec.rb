@@ -57,9 +57,32 @@ describe PgnFile do
       pgn_file = PgnFile.new('./spec/example_pgns/v.pgn')
       expect{pgn_file.load_and_parse_games}.not_to raise_error
       game = pgn_file.games.first
-      game.moves['0'].select{|m| m.variation_info.level == 0}.count.should eql 4
-      game.moves['1'].select{|m| m.variation_info.level == 1}.count.should eql 3
+      moves = game.moves['0']
+      moves.count.should eql 4
+      variation = game.moves['1']
+      variation.count.should eql 3
+      variation.last.previous_move.should eql variation[1]
+      variation[1].previous_move.should eql variation[0]
+      variation[0].previous_move.should eql moves[0]
+      moves[3].previous_move.should eql moves[2]
+      moves[2].previous_move.should eql moves[1]
+      moves[1].previous_move.should eql moves[0]
+      moves[0].previous_move.should be_nil
 
+      game = pgn_file.games.last
+      moves = game.moves['0']
+      moves.count.should eql 4
+      variation = game.moves['1']
+      variation.count.should eql 7
+      variation[2].previous_move.should eql variation[1]
+      variation[1].previous_move.should eql variation[0]
+      variation[0].previous_move.should eql moves[0]
+      moves[3].previous_move.should eql moves[2]
+      moves[2].previous_move.should eql moves[1]
+      moves[1].previous_move.should eql moves[0]
+      moves[0].previous_move.should be_nil
+      subvariation = game.moves['2']
+      subvariation.count.should eql 7
     end
 
     it 'should parse a one game valid file - 2' do

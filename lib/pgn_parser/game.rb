@@ -33,8 +33,9 @@ class Game
           else
             move = ByzantionChess::Move.new(piece.field, info[:field], piece.color, last_move_number)
           end
-          move.variation_info.level = level
         end
+        move.variation_info.level = level
+        move.variation_info.previous_move = @moves[level.to_s].last || (@moves[(level-1).to_s][-2] if level > 0)
         move.execute(board)
         @moves[level.to_s] << move
       elsif move.kind_of?(Sexp::PCommentWithBracket)

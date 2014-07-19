@@ -5,6 +5,8 @@ module ByzantionChess
     delegate :color, :to => :additional_info, :prefix => false
     delegate :number, :to => :additional_info, :prefix => false
     delegate :comment, :to => :additional_info, :prefix => false
+    delegate :level, :to => :variation_info, :prefix => false
+    delegate :previous_move, :to => :variation_info, :prefix => false
 
     def initialize(start_field, finish_field, color, number=nil)
       @start = start_field.kind_of?(ByzantionChess::Field) ? start_field : Field.to_field(start_field)

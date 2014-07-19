@@ -1,11 +1,11 @@
-require 'byzantion_chess.rb'
+require 'byzantion_chess'
 
 
 class PgnFile
   attr_accessor :filepath, :games
- 
+
   def initialize(filepath)
-  	raise ByzantionChess::InvalidPGNFile.new("Not a pgn extension") unless filepath[-3..-1] == 'pgn'
+  	raise ByzantionChess::InvalidPGNFile.new("Not a pgn extension") unless filepath[-3..-1] == 'pgn'  # TODO Fole.extname
     @filepath = filepath
     @games = []
   end
@@ -17,25 +17,16 @@ class PgnFile
     raise ByzantionChess::InvalidPGNFile.new("PgnFileEmpty") if content.blank?
 
     begin
-      self.games = parse_games(content)
+      pgn_content = PgnFileContent.new(content)
+      self.games = pgn_content.parse_games(content)
     rescue ByzantionChess::InvalidPGNFile => e
       puts e.backtrace
       return false
-    ensure	
+    ensure
       file.close
     end
 
     return true
-  end	
-
-private
-
-  def parse_games(content)
-  	parsed_file = Parser.parse(content)
-    parsed_file.map do |one_game|
-      game = Game.new(one_game)
-      game.convert_body_to_moves
-      game
-    end  
   end
+
 end

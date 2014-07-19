@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    byzantion_chess (0.0.1)
+    byzantion_chess (0.0.2)
 
 GEM
   remote: https://rubygems.org/
@@ -48,6 +48,7 @@ GEM
     treetop (1.4.14)
       polyglot
       polyglot (>= 0.3.1)
+    uci (0.0.2)
     yard (0.8.6.1)
 
 PLATFORMS
@@ -65,4 +66,5 @@ DEPENDENCIES
   rspec (~> 2.6)
   simplecov (>= 0.7.1)
   treetop
+  uci
   yard (>= 0.8.5.2)
