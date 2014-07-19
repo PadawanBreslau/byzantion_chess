@@ -18,7 +18,7 @@ class PgnFile
 
     begin
       pgn_content = PgnFileContent.new(content)
-      self.games = pgn_content.parse_games(content)
+      self.games = pgn_content.parse_games
     rescue ByzantionChess::InvalidPGNFile => e
       puts e.backtrace
       return false
