@@ -6,6 +6,10 @@ module ByzantionChess
       super field, color, board
     end
 
+    def to_s(locale = :en)
+      ''
+    end
+
     def can_move_to_field?(destination)
       direction = @color == ByzantionChess::WHITE ? -1 : 1
       accessible = @moved ? @field.accessible_by_vertical_line?(destination, 1) : @field.accessible_by_vertical_line?(destination, 2)

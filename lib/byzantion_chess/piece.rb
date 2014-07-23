@@ -1,10 +1,10 @@
 class ByzantionChess::Piece
   attr_reader :field, :color, :board
   attr_accessor :moved
-  
+
   delegate :horizontal_line, :to => :field, :prefix => false, :allow_nil => false
   delegate :vertical_line, :to => :field, :prefix => false, :allow_nil => false
-  
+
   def initialize(field, color, board=nil, moved=false)
     raise ByzantionChess::InvalidPieceException unless field && color
     @field = field
@@ -12,7 +12,11 @@ class ByzantionChess::Piece
     @moved = moved
     @board = board
   end
-  
+
+  def to_s(locale = :en)
+    raise ByzantionChess::InvalidPieceException.new("Should call this method in subclass")
+  end
+
   def update_position field
     @field = field
   end
@@ -44,7 +48,7 @@ class ByzantionChess::Piece
   def get_color
     @color
   end
-  
+
   def same_location_as?(piece)
     self.horizontal_line == piece.horizontal_line && self.vertical_line == piece.vertical_line
   end
@@ -58,5 +62,5 @@ class ByzantionChess::Piece
   def good_field_format field
     field.size == 2 && field[0] >= "a" && field[0] <= "h" && field[1] >= "1" && field[1] <= "8"
   end
-  
+
 end
