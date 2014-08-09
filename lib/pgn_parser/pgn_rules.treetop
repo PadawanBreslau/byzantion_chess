@@ -54,7 +54,7 @@ grammar Sexp
    [x] / "ax" / "bx" / "cx" / "dx" / "ex" / "fx" / "gx" / "hx" <PTakes>
   end
 
-  
+
   rule result
     "1-0" / "0-1" / "1/2-1/2" / "1/2" / "*" <PResult>
   end
@@ -83,7 +83,7 @@ grammar Sexp
   end
 
   rule new_line
-    [\n]
+    [(\r)\n]
   end
 
 ## CHESS RULES
