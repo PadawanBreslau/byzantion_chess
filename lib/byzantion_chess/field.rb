@@ -11,15 +11,15 @@ module ByzantionChess
       @vertical_line = vertical_line
       @horizontal_line = horizontal_line
     end
-    
+
     def to_s
       (@vertical_line+96).chr + (@horizontal_line).to_s
     end
-    
+
     def self.to_field(square)
       square.kind_of?(String) ?  Field.new(square[0].ord-96, square[1].to_i) : square
     end
-    
+
     def self.get_fields_between(origin, destination)
       return WrongMoveException unless origin.kind_of?(Field) && destination.kind_of?(Field)
       fields = []
@@ -55,21 +55,21 @@ module ByzantionChess
     def accessible_by_vertical_line?(field, limit=8)
       !self.same_field?(field) && @vertical_line == field.vertical_line && ((@horizontal_line-field.horizontal_line).abs <= limit)
     end
-    
+
     def accessible_by_horizontal_line?(field, limit=8)
       !self.same_field?(field) && @horizontal_line == field.horizontal_line && ((@vertical_line-field.vertical_line).abs <= limit)
     end
-    
+
     def accessible_by_line?(field, limit=8)
       accessible_by_vertical_line?(field, limit) || accessible_by_horizontal_line?(field, limit)
     end
-    
+
     def accessible_by_diagonal?(field, limit=8)
       !self.same_field?(field) &&
       (@vertical_line-field.vertical_line).abs == (@horizontal_line-field.horizontal_line).abs &&
       (@vertical_line-field.vertical_line).abs <= limit
     end
-    
+
     def accessible_by_jump?(field)
       (1..2).include?((@vertical_line-field.vertical_line).abs) &&
       (1..2).include?((@horizontal_line-field.horizontal_line).abs) &&
@@ -88,9 +88,9 @@ module ByzantionChess
     def same_field?(field)
       self.vertical_line == field.vertical_line && self.horizontal_line == field.horizontal_line
     end
-    
+
     private
-    
+
     def self.range_helper range
       borders = [range.begin, range.end]
      (borders.min+1..borders.max-1)

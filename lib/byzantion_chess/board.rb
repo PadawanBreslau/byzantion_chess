@@ -27,7 +27,7 @@ module ByzantionChess
     delegate :path_is_not_obstructed?, :to => :board_helper, :prefix => false
     delegate :validate_move, :to => :board_helper, :prefix => false
     delegate :destroy_piece_on_field, :to => :board_helper, :prefix => false
-
+    delegate :piece_is_not_bound?, :to => :board_helper, :prefix => false
     delegate :update_rook_position, :to => :castle_helper, :prefix => false
     delegate :castle_possible?, :to => :castle_helper, :prefix => false
 

@@ -32,5 +32,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "yard", ">= 0.8.5.2"
   spec.add_development_dependency "simplecov", ">= 0.7.1"
   spec.add_development_dependency 'coveralls', '>= 0.6.1'
-  spec.add_development_dependency 'treetop'
+ # spec.add_development_dependency 'treetop'
 end

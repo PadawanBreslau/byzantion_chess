@@ -1,15 +1,15 @@
 require 'byzantion_chess.rb'
 
 class Game
-    attr_accessor :header, :body, :moves
+  attr_accessor :header, :body, :moves
 
-	def initialize(parsed_game)
+  def initialize(parsed_game)
     @header = parsed_game.elements.first.create_value_hash
     @body = parsed_game.elements.last
-	  @moves = Hash.new { |hash, key| hash[key] = [] }
-	end
+    @moves = Hash.new { |hash, key| hash[key] = [] }
+  end
 
-	def convert_body_to_moves
+  def convert_body_to_moves
     extract_one_level_elements(@body.elements, ByzantionChess::Board.new, 0)
     return true
   end
@@ -48,7 +48,7 @@ class Game
     end
   end
 
-	private
+  private
 
   def create_castle(move, board)
     move_text = move.text_value
@@ -65,8 +65,8 @@ class Game
     move
   end
 
-	def return_move_information(move_text, castle=false)
-	  info = {}
+  def return_move_information(move_text, castle=false)
+    info = {}
     promotion = move_text.split("=")
 
     if promotion.size == 2
@@ -74,42 +74,42 @@ class Game
       info[:promoted_piece] = get_piece_from_letter(promotion.last[0])
     end
 
-	  move_split = move_text.split('.')
-	  info[:piece_color] = move_split.size == 2 ? ByzantionChess::WHITE : ByzantionChess::BLACK
-	  info[:move_number] = move_split.first.strip if move_split.size == 2
-	  move_string = move_split.last.strip
-	  
-	  raise InvalidMoveException.new("Wrong move description") if move_string.size < 2
-	  
-	  info[:check] = move_string.include?('+')
-	  info[:take] = move_string.include?('x') || move_string.include?(':')
+    move_split = move_text.split('.')
+    info[:piece_color] = move_split.size == 2 ? ByzantionChess::WHITE : ByzantionChess::BLACK
+    info[:move_number] = move_split.first.strip if move_split.size == 2
+    move_string = move_split.last.strip
+
+    raise InvalidMoveException.new("Wrong move description") if move_string.size < 2
+
+    info[:check] = move_string.include?('+')
+    info[:take] = move_string.include?('x') || move_string.include?(':')
     info[:mate] = move_string.include?('#')
 
     return info if castle
 
-	  move_string = move_string.delete('+').delete('x').delete(':').delete('#')
+    move_string = move_string.delete('+').delete('x').delete(':').delete('#')
 
-	  if(2 == move_string.size)
-	  	info[:piece_type] = ByzantionChess::Pawn
-	  	info[:field] = ByzantionChess::Field.to_field(move_string)
-	  elsif(3 == move_string.size)
-	  	if move_string[0].ord >= 'a'.ord && move_string[0].ord <= 'h'.ord  # "cxd4"
-	  	  info[:additional_info] = move_string[0]
-	  	  info[:piece_type] = ByzantionChess::Pawn
-	  	else
-	  	  info[:piece_type] = get_piece_from_letter(move_string[0])
-	  	end
-	  	info[:field] = ByzantionChess::Field.to_field(move_string[1..2])
-	  elsif(4 == move_string.size)
-	    info[:piece_type] = get_piece_from_letter(move_string[0])
-	  	info[:field] = ByzantionChess::Field.to_field(move_string[2..3])
-	  	info[:additional_info] = move_string[1]
-	  end	
-	  info
-	end
+    if(2 == move_string.size)
+      info[:piece_type] = ByzantionChess::Pawn
+      info[:field] = ByzantionChess::Field.to_field(move_string)
+    elsif(3 == move_string.size)
+      if move_string[0].ord >= 'a'.ord && move_string[0].ord <= 'h'.ord  # "cxd4"
+        info[:additional_info] = move_string[0]
+        info[:piece_type] = ByzantionChess::Pawn
+      else
+        info[:piece_type] = get_piece_from_letter(move_string[0])
+      end
+      info[:field] = ByzantionChess::Field.to_field(move_string[1..2])
+    elsif(4 == move_string.size)
+      info[:piece_type] = get_piece_from_letter(move_string[0])
+      info[:field] = ByzantionChess::Field.to_field(move_string[2..3])
+      info[:additional_info] = move_string[1]
+    end
+    info
+  end
 
-	def get_piece_from_letter(letter)
-	  {"K" => ByzantionChess::King, "Q" => ByzantionChess::Queen, "R" => ByzantionChess::Rook,
-	   "B" => ByzantionChess::Bishop, "N" => ByzantionChess::Knight}[letter]
-	end	
+  def get_piece_from_letter(letter)
+    {"K" => ByzantionChess::King, "Q" => ByzantionChess::Queen, "R" => ByzantionChess::Rook,
+     "B" => ByzantionChess::Bishop, "N" => ByzantionChess::Knight}[letter]
+  end
 end

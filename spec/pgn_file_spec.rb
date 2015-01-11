@@ -3,28 +3,28 @@ require 'spec_helper'
 describe PgnFile do
 
   context 'loading pgn file' do
-	it 'should initialize pgn_file object' do
-		expect{PgnFile.new('filepath.pgn')}.not_to raise_error
-	end
+    it 'should initialize pgn_file object' do
+      expect{PgnFile.new('filepath.pgn')}.not_to raise_error
+    end
 
-	it 'should not be able to load a file that is not a pgn' do
-		expect{PgnFile.new('filepath.png')}.to raise_error
+    it 'should not be able to load a file that is not a pgn' do
+      expect{PgnFile.new('filepath.png')}.to raise_error
     end
 
     it 'should not load a file when path is incorrect' do
-    	pgn_file = PgnFile.new('./spec/example_pgns/unexisting_filepath.pgn')
-    	expect{pgn_file.load_and_parse_games}.to raise_error(ByzantionChess::InvalidPGNFile)
+      pgn_file = PgnFile.new('./spec/example_pgns/unexisting_filepath.pgn')
+      expect{pgn_file.load_and_parse_games}.to raise_error(ByzantionChess::InvalidPGNFile)
     end
 
-	it 'should return error if file is empty' do
-		pgn_file = PgnFile.new('./spec/example_pgns/empty_file.pgn')
-		expect{pgn_file.load_and_parse_games}.to raise_error(ByzantionChess::InvalidPGNFile)
-  	end
+    it 'should return error if file is empty' do
+      pgn_file = PgnFile.new('./spec/example_pgns/empty_file.pgn')
+      expect{pgn_file.load_and_parse_games}.to raise_error(ByzantionChess::InvalidPGNFile)
+    end
   end
 
   context 'parsing pgn file' do
-  	it 'should parse a one game valid file' do
-  		pgn_file = PgnFile.new('./spec/example_pgns/p.pgn')
+    it 'should parse a one game valid file' do
+      pgn_file = PgnFile.new('./spec/example_pgns/p.pgn')
       expect{pgn_file.load_and_parse_games}.not_to raise_error
       pgn_file.load_and_parse_games.should be_true
       pgn_file.games.should_not be_nil
@@ -122,10 +122,28 @@ describe PgnFile do
           expect{move.execute(board)}.not_to raise_error
         end
         board.writeFEN
-      board_before_move.should_not eql board
+        board_before_move.should_not eql board
       end
     end
 
 
+  end
+
+  context 'big tounramnent files' do
+    it 'should parse game from tashkient' do
+      pgn_file = PgnFile.new('./spec/example_pgns/real_games/tash.pgn')
+      expect{pgn_file.load_and_parse_games}.not_to raise_error
+    end
+
+    it 'should parse game from candidates' do
+      pgn_file = PgnFile.new('./spec/example_pgns/real_games/cand.pgn')
+      expect{ pgn_file.load_and_parse_games}.not_to raise_error
+      pgn_file.games.count.should eq (4 * 14)
+    end
+
+    it 'should parse game from polish woman champ' do
+      pgn_file = PgnFile.new('./spec/example_pgns/real_games/mpk.pgn')
+      expect{pgn_file.load_and_parse_games}.not_to raise_error
+    end
   end
 end
