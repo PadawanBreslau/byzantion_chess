@@ -111,7 +111,7 @@ describe PgnFile do
       expect{pgn_file.load_and_parse_games}.not_to raise_error
       pgn_file.load_and_parse_games.should be_true
       pgn_file.games.should_not be_nil
-      pgn_file.games.size.should eql 211
+      pgn_file.games.size.should eql 90
       game = pgn_file.games.first
       game.should be_kind_of(Game)
       game.moves.should_not be_empty
@@ -133,6 +133,7 @@ describe PgnFile do
     it 'should parse game from tashkient' do
       pgn_file = PgnFile.new('./spec/example_pgns/real_games/tash.pgn')
       expect{pgn_file.load_and_parse_games}.not_to raise_error
+      pgn_file.games.count.should eq (6 * 11)
     end
 
     it 'should parse game from candidates' do
@@ -144,6 +145,7 @@ describe PgnFile do
     it 'should parse game from polish woman champ' do
       pgn_file = PgnFile.new('./spec/example_pgns/real_games/mpk.pgn')
       expect{pgn_file.load_and_parse_games}.not_to raise_error
+      pgn_file.games.count.should eq 45
     end
   end
 end

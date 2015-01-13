@@ -1,15 +1,12 @@
 module Sexp
 
   class PAllGames < Treetop::Runtime::SyntaxNode
-
   end
 
   class PGame < Treetop::Runtime::SyntaxNode
-
   end
 
   class PHeaderBody < Treetop::Runtime::SyntaxNode
-
   end
 
   class PHeader < Treetop::Runtime::SyntaxNode
@@ -21,15 +18,12 @@ module Sexp
   end
 
   class PAllMoves < Treetop::Runtime::SyntaxNode
-     
   end
 
   class PAllMovesWithResult < Treetop::Runtime::SyntaxNode
-    
   end
 
   class POneMove < Treetop::Runtime::SyntaxNode
-
   end
 
 
@@ -104,12 +98,10 @@ module Sexp
   end
 
   class PMoveNumber < Treetop::Runtime::SyntaxNode
-
   end
 
 
   class PComment < Treetop::Runtime::SyntaxNode
-
   end
 
 
@@ -121,7 +113,6 @@ module Sexp
 
 
   class PVariation < Treetop::Runtime::SyntaxNode
-
   end
 
   class PResult < Treetop::Runtime::SyntaxNode
@@ -132,25 +123,25 @@ module Sexp
   end
 
   class PInteger < Treetop::Runtime::SyntaxNode
-
   end
 
   class PFloat < Treetop::Runtime::SyntaxNode
-
   end
 
   class PString < Treetop::Runtime::SyntaxNode
-
   end
 
   class PIdentifier < Treetop::Runtime::SyntaxNode
-
   end
 
   class PCastle < Treetop::Runtime::SyntaxNode
-
   end
 
+  class PTime < Treetop::Runtime::SyntaxNode
+  end
+
+  class PTimeIdentifier < Treetop::Runtime::SyntaxNode
+  end
 end
 
 
@@ -161,6 +152,6 @@ class Treetop::Runtime::SyntaxNode
       hash[element.elements.first.text_value] = element.elements.last.text_value.gsub('"','')
 # TODO - to hash values or recursive
     end
-    hash  
-  end  
+    hash
+  end
 end
