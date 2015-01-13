@@ -90,7 +90,7 @@ grammar Sexp
   end
 
   rule new_line
-    [(\r)\n]
+    [\n]
   end
 
   rule multiple_line

@@ -12,7 +12,7 @@ class PgnFile
 
   def load_and_parse_games
     raise ByzantionChess::InvalidPGNFile.new("PgnFileNotFound") unless File.exists?(filepath)
-    file = File.open(filepath, "rb")
+    file = File.open(filepath, "rt")
     content = file.read
     raise ByzantionChess::InvalidPGNFile.new("PgnFileEmpty") if content.blank?
 
