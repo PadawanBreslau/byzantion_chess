@@ -147,5 +147,11 @@ describe PgnFile do
       expect{pgn_file.load_and_parse_games}.not_to raise_error
       pgn_file.games.count.should eq 45
     end
+
+    it 'should parse game from dortmund' do
+      pgn_file = PgnFile.new('./spec/example_pgns/real_games/dort.pgn')
+      expect{pgn_file.load_and_parse_games}.not_to raise_error
+      pgn_file.games.count.should eq 28
+    end
   end
 end
