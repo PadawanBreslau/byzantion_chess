@@ -133,25 +133,41 @@ describe PgnFile do
     it 'should parse game from tashkient' do
       pgn_file = PgnFile.new('./spec/example_pgns/real_games/tash.pgn')
       expect{pgn_file.load_and_parse_games}.not_to raise_error
-      pgn_file.games.count.should eq (6 * 11)
+      games = pgn_file.games
+      games.count.should eq 66
+      games.each do |game|
+        game.header.should_not be_empty
+      end
     end
 
     it 'should parse game from candidates' do
       pgn_file = PgnFile.new('./spec/example_pgns/real_games/cand.pgn')
       expect{ pgn_file.load_and_parse_games}.not_to raise_error
-      pgn_file.games.count.should eq (4 * 14)
+      games = pgn_file.games
+      games.count.should eq 56
+      games.each do |game|
+        game.header.should_not be_empty
+      end
     end
 
     it 'should parse game from polish woman champ' do
       pgn_file = PgnFile.new('./spec/example_pgns/real_games/mpk.pgn')
       expect{pgn_file.load_and_parse_games}.not_to raise_error
-      pgn_file.games.count.should eq 45
+      games = pgn_file.games
+      games.count.should eq 45
+      games.each do |game|
+        game.header.should_not be_empty
+      end
     end
 
     it 'should parse game from dortmund' do
       pgn_file = PgnFile.new('./spec/example_pgns/real_games/dort.pgn')
       expect{pgn_file.load_and_parse_games}.not_to raise_error
-      pgn_file.games.count.should eq 28
+      games = pgn_file.games
+      games.count.should eq 28
+      games.each do |game|
+        game.header.should_not be_empty
+      end
     end
   end
 end
