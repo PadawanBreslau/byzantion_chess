@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    byzantion_chess (0.0.4)
+    byzantion_chess (0.1.0)
 
 GEM
   remote: http://bb-m.rubygems.org/

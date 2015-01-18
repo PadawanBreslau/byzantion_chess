@@ -32,54 +32,37 @@ module Sexp
       move = move.text_value.strip
       move_hash = {}
 
-      if move.include? "."
+      if move.include?(".")
         move_split = move.split(".")
         move_hash[:white] = (move_split.size <= 2)
-
         move_hash[:move_number] = move_split.first.to_i
         move_part = move_split.last
-
-        #unless m.move_number == 1
-          #prev_move = Move.find_all_by_body_id(body_id).last ## HERE
-          #m.prev_move = prev_move.id
-        #end
-
       else
-        #prev_move = Move.find_all_by_body_id(body_id).last
-        #m.prev_move = prev_move.id
-        #m.move_number = prev_move.move_number
-        #m.white = false
         move_part = move
       end
 
       if move_hash[:white] && move_part.include?("O-O-O")
-        move_part.gsub! "O-O-O", "Kec1"
-      end
-
-      if move_hash[:white] && move_part.include?("O-O")
-        move_part.gsub! "O-O", "Keg1"
-      end
-
-      if !move_hash[:white] && move_part.include?("O-O-O")
-        move_part.gsub! "O-O-O", "Kec8"
-      end
-
-      if !move_hash[:white] && move_part.include?("O-O")
-        move_part.gsub! "O-O", "Keg8"
+        move_part.gsub!("O-O-O", "Kec1")
+      elsif move_hash[:white] && move_part.include?("O-O")
+        move_part.gsub!("O-O", "Keg1")
+      elsif !move_hash[:white] && move_part.include?("O-O-O")
+        move_part.gsub!("O-O-O", "Kec8")
+      elsif !move_hash[:white] && move_part.include?("O-O")
+        move_part.gsub!("O-O", "Keg9")
       end
 
       move_hash[:is_check] = move_part.end_with?("+")
-      move_part.delete! "+"
+      move_part.delete!("+")
 
       last_char = move_part[-1]
       if last_char > "A" && last_char < "Z"
         move_hash[:is_promotion] = true
         move_part.chop!
-        move_part.delete! "="
+        move_part.delete!("=")
       end
 
       move_hash[:is_taking] = move_part.include?("x")
-      move_part.delete! "x"
+      move_part.delete!("x")
       move_part.strip!
 
       if move_part[0] > "A" && move_part[0] < "Z"
@@ -92,7 +75,7 @@ module Sexp
       move_hash[:start_field] = move_part[-3]
       move_hash[:finish_field] = move_part[-2..-1]
 
-      return move_hash
+      move_hash
     end
 
   end
