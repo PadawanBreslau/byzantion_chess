@@ -42,10 +42,15 @@ module ByzantionChess
     end
 
     def get_possible_pieces(piece_type, color, field, additional_info = nil)
-      pieces = @board.pieces.select{|piece| piece.kind_of?(piece_type) && piece.color == color}
-      .select{|piece| self.path_is_not_obstructed?(piece, field) && (piece.can_move_to_field?(field) || (piece.can_take_on_field?(field) && field_taken(field)) || piece.can_en_passant?(@board, color, field) ) && self.piece_is_not_bound?(piece, color, field)}
+      pieces = @board.pieces.
+        select{|piece| piece.kind_of?(piece_type) && piece.color == color}.
+        select{|piece| self.path_is_not_obstructed?(piece, field) && (piece.can_move_to_field?(field) || piece_can_take_on_field?(piece, field) || piece.can_en_passant?(@board, color, field) ) && self.piece_is_not_bound?(piece, color, field)}
 
       (pieces.size > 1 && additional_info) ? select_piece_by_additional_info(pieces, additional_info) : pieces
+    end
+
+    def piece_can_take_on_field?(piece, field)
+      piece.can_take_on_field?(field) && field_taken(field)
     end
 
     def get_possible_pieces_from_move(move)
@@ -60,23 +65,11 @@ module ByzantionChess
       fields.each do |field|
         return false if field_taken(field)
       end
-      return true
+      true
     end
 
     def piece_is_not_bound?(original_piece, color, destination)
-      king = @board.pieces.select{|piece| piece.kind_of?(ByzantionChess::King) && piece.color == color}.first
-      opponent_pieces = @board.pieces.select{|piece| piece.color != color && [ByzantionChess::Queen, ByzantionChess::Rook, ByzantionChess::Bishop].include?(piece.class) && piece.can_move_to_field?(king.field)}
-      field_between_piece_and_king = Field.get_fields_between(original_piece.field, king.field).map(&:to_s)
-      opponent_pieces.each do |opp_piece|
-        fields_between = Field.get_fields_between(opp_piece.field, king.field).map(&:to_s)
-        field_between_piece_and_opponent_piece = (fields_between - field_between_piece_and_king) - [ original_piece.field.to_s ]
-        return false if fields_between.include?(original_piece.field.to_s) &&
-          field_between_piece_and_king.select{|field| @board.piece_from(field) }.empty? &&
-          field_between_piece_and_opponent_piece.select{|field| @board.piece_from(field) }.empty? &&
-          !fields_between.include?(destination.to_s) &&
-          opp_piece.field.to_s != destination.to_s
-      end
-      true
+      ByzantionChess::ChessValidations::PieceBoundCheck.new(@board, original_piece, color, destination).check
     end
 
     def validate_move(move, piece ,destination)

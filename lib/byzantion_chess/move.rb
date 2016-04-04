@@ -22,5 +22,5 @@ module ByzantionChess
     def to_s
       "#{@start}-#{@finish}"
     end
-  end 
+  end
 end

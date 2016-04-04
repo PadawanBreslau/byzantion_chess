@@ -1,12 +1,14 @@
 module ByzantionChess
   class FenHelper
 
+    LETTER = {"ByzantionChess::King" => "k", "ByzantionChess::Queen" => "q","ByzantionChess::Rook" => "r",
+       "ByzantionChess::Bishop" => "b","ByzantionChess::Knight" => "n","ByzantionChess::Pawn" => "p"}
+
     def initialize(board)
       @board = board
     end
 
     def readFEN(fen)
-      # TODO Na razie sa tylko figury
       board, color_to_move, castles, en_passant, halfmove_clock, move_number = fen.strip.split(" ")
       board.split("/").each_with_index do |line, index|
         column = 0
@@ -48,10 +50,9 @@ module ByzantionChess
 
     def writeFEN
       result = ''
-
       8.downto(1) do |i|
-        pieces = @board.pieces.select{|piece| piece.field.horizontal_line == i}.sort{|p1,p2| p1.field.vertical_line <=> p2.field.vertical_line}.map{|p| {:klass => p.class, :color => p.color, :line => p.vertical_line}}
-        one_line = create_fen_line(pieces)
+        pieces = sort_pieces_by_verical_line(pieces_from_line(@board.pieces, i))
+        one_line = create_fen_line(prepare_format(pieces))
         result << one_line
         result << '/' unless i == 1
       end
@@ -61,9 +62,20 @@ module ByzantionChess
 
     private
 
+    def prepare_format(pieces)
+      pieces.map{|p| {:klass => p.class, :color => p.color, :line => p.vertical_line}}
+    end
+
+    def pieces_from_line(pieces, line)
+      pieces.select{|piece| piece.field.horizontal_line == line}
+    end
+
+    def sort_pieces_by_verical_line(pieces)
+      pieces.sort{|p1,p2| p1.field.vertical_line <=> p2.field.vertical_line}
+    end
+
     def piece_to_literal(klass,color)
-      letter = {"ByzantionChess::King" => "k", "ByzantionChess::Queen" => "q","ByzantionChess::Rook" => "r",
-       "ByzantionChess::Bishop" => "b","ByzantionChess::Knight" => "n","ByzantionChess::Pawn" => "p"}[klass]
+      letter = LETTER[klass]
       ByzantionChess::WHITE == color ? letter.upcase : letter
     end
 
@@ -83,9 +95,8 @@ module ByzantionChess
     def additional_info
       result = ' '
       color = @board.to_move == WHITE ? 'w' : 'b'
-      castle = add_castle_info
-      result.concat(color).concat(castle)
-      if @board.en_passant then
+      result.concat(color).concat(castle_info)
+      if @board.en_passant
         result.concat(@board.en_passant.field.to_s)
       else
         result.concat('-')
@@ -94,7 +105,7 @@ module ByzantionChess
       result
     end
 
-    def add_castle_info
+    def castle_info
       result = ' '
       wc = @board.white_castle_possible
       bc = @board.black_castle_possible

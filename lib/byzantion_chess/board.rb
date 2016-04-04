@@ -139,7 +139,7 @@ module ByzantionChess
         move.variation_info.previous_move = last_move
       end
       @moves << move
-      @additional_info.move_up if piece.color == BLACK   #TODO Jak liczyć ruchy i polruch z wariantami?
+      @additional_info.move_up if piece.color == BLACK
       @additional_info.half_move_up(taking, piece.class)
       @fens << self.writeFEN
       @additional_infos << @additional_info
@@ -162,5 +162,5 @@ class Array
       yield self[i], self[j]
     end
   end
-end 
+end
 
