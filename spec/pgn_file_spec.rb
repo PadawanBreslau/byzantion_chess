@@ -147,6 +147,29 @@ describe PgnFile do
       games.count.should eq 56
       games.each do |game|
         game.header.should_not be_empty
+        game.moves.should_not be_empty
+      end
+    end
+
+    it 'should parse Capablanca game' do
+      pgn_file = PgnFile.new('./spec/example_pgns/real_games/Capablanca.pgn')
+      expect{ pgn_file.load_and_parse_games}.not_to raise_error
+      games = pgn_file.games
+      games.count.should eq 597
+      games.each do |game|
+        game.header.should_not be_empty
+        game.moves.should_not be_empty
+      end
+    end
+
+    it 'should parse Bronstein game' do
+      pgn_file = PgnFile.new('./spec/example_pgns/real_games/Bronstein.pgn')
+      expect{ pgn_file.load_and_parse_games}.not_to raise_error
+      games = pgn_file.games
+      games.count.should eq 1930
+      games.each do |game|
+        game.header.should_not be_empty
+        game.moves.should_not be_empty
       end
     end
 
@@ -157,6 +180,7 @@ describe PgnFile do
       games.count.should eq 45
       games.each do |game|
         game.header.should_not be_empty
+        game.moves.should_not be_empty
       end
     end
 
@@ -167,6 +191,7 @@ describe PgnFile do
       games.count.should eq 28
       games.each do |game|
         game.header.should_not be_empty
+        game.moves.should_not be_empty
       end
     end
   end
