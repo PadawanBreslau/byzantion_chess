@@ -16,6 +16,15 @@ module ByzantionChess
       @moves_upto_draw = 0
     end
 
+    def to_s
+      result = ""
+      result << "Move #{@move_number}"
+      result << add_possible_castles
+      result << ", EN PASSANT possible" if @en_passant
+      result << ", CHECK" if @is_check
+      result << ", MATE" if @is_mate
+    end
+
     def move_up
       @move_number = @move_number + 1
     end
@@ -37,5 +46,14 @@ module ByzantionChess
       next_color(@to_move)
     end
 
+  private
+    def add_possible_castles
+      result = ""
+      result << "White long castle possible;" if @white_castle_possible[:long]
+      result << "Black short castle possible;" if @white_castle_possible[:short]
+      result << "White long castle possible;" if @white_castle_possible[:long]
+      result << "Black short castle possible" if @white_castle_possible[:short]
+      result
+    end
   end
 end
